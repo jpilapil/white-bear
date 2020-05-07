@@ -1,0 +1,38 @@
+body {
+   font-family: "Noto Sans", sans-serif;
+}
+
+h1 {
+   color: $gray-050;
+   font-family: "Fira Sans", sans-serif;
+}
+
+p {
+   font-size: 1rem;
+   color: $gray-800;
+}
+
+.btn {
+   font-family: "Noto Sans", sans-serif;
+   font-weight: 700;
+}
+
+.card-text {
+   font-family: "Noto Serif", serif;
+}
+
+.input-outline {
+   border: 2px solid $gray;
+}
+
+// BACKGROUND IMAGE
+.background-image {
+   background-image: url(../images/background-landing.jpg);
+
+   background-size: cover;
+}
+
+#login-button {
+   float: right;
+   background-color: $blue-600;
+}
