@@ -11359,6 +11359,10 @@ p {
   font-family: "Noto Serif", serif;
 }
 
+.sign-up-text {
+  color: #2f52b9;
+}
+
 .input-outline {
   border: 2px solid #52535f;
 }
