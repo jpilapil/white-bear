@@ -1,10 +1,11 @@
+// Body elements
 body {
    font-family: "Noto Sans", sans-serif;
    height: 1280px;
 }
 
 h1 {
-   color: $gray-050;
+   color: $white;
    font-family: "Fira Sans", sans-serif;
 }
 
@@ -13,11 +14,19 @@ p {
    color: $gray-800;
 }
 
+// BUTTONS
+
 .btn {
    font-family: "Noto Sans", sans-serif;
-   font-weight: 700;
 }
 
+.btn-link {
+   padding-left: 0;
+   padding-right: 0;
+   font-weight: bold;
+}
+
+// CARDS
 .card-text {
    font-family: "Noto Serif", serif;
 }
