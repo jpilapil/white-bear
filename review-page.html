@@ -12,7 +12,7 @@
    </head>
    <body>
       <div class="container">
-         <div class="row">
+         <div class="row mt-1">
             <!-- Header with logo -->
             <div
                class="col-12 col-xl-6 offset-xl-3 col-lg-8 offset-lg-2 col-md-10 offset-md-1"
@@ -29,46 +29,69 @@
 
                <!-- Nav bar -->
                <div
-                  class="btn-group d-flex"
+                  class="btn-group d-flex mb-5"
                   role="navigation"
                   aria-label="navigation"
                >
-                  <button type="button" class="btn btn-secondary">
-                     Create New
-                  </button>
+                  <a
+                     href="create-imagery-3.html"
+                     type="button"
+                     class="btn btn-secondary tab-separator"
+                  >
+                     Create new
+                  </a>
                   <button
                      type="button"
                      class="btn btn-secondary tab-separator tab-active"
                   >
                      Review
                   </button>
-                  <button type="button" class="btn btn-secondary tab-separator">
-                     All Cards
-                  </button>
+                  <a
+                     href="all-cards-7.html"
+                     type="button"
+                     class="btn btn-secondary tab-separator"
+                  >
+                     All cards
+                  </a>
                </div>
 
                <!-- Card -->
+               <div class="mb-5">
+                  <div class="card bg-primary">
+                     <div class="card-body">
+                        <p>
+                           Lorem, ipsum dolor sit amet consectetur adipisicing
+                           elit. Iure maxime voluptate non magni, fugiat
+                           laudantium iusto fugit voluptatem? Maxime iste animi
+                           sed sit, magni natus.
+                        </p>
+                     </div>
+                  </div>
 
-               <div class="card bg-primary mt-5">
-                  <div class="card-body">
-                     <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit. Iure maxime voluptate non magni, fugiat laudantium
-                        iusto fugit voluptatem? Maxime iste animi sed sit, magni
-                        natus.
-                     </p>
+                  <div class="card bg-secondary">
+                     <div class="card-body">
+                        <p>
+                           Lorem, ipsum dolor sit amet consectetur adipisicing
+                           elit. Aperiam ipsa suscipit dignissimos, distinctio
+                           sed dolores officia ipsam qui deleniti hic molestiae
+                           tempora modi cumque quis.
+                        </p>
+                     </div>
                   </div>
                </div>
-
-               <div class="card bg-secondary">
-                  <div class="card-body">
-                     <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit. Aperiam ipsa suscipit dignissimos, distinctio sed
-                        dolores officia ipsam qui deleniti hic molestiae tempora
-                        modi cumque quis.
-                     </p>
-                  </div>
+               <button class="btn btn-link">Edit</button>
+               <div class="float-right">
+                  <button class="btn btn-outline-primary mr-4">
+                     Needs Work
+                  </button>
+                  <button class="btn btn-primary">
+                     <img
+                        src="/icons/thumbs-up.svg"
+                        width="20px"
+                        style="margin-bottom: 5px;"
+                        class="mr-2"
+                     />Got it
+                  </button>
                </div>
             </div>
          </div>
