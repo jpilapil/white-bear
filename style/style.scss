@@ -80,3 +80,12 @@ h1 {
 #inside-card {
    padding: 16px;
 }
+
+// fixes button issue on login page
+.landing-button {
+   margin-top: 1rem;
+   padding-left: 2rem;
+   padding-right: 2rem;
+   padding-top: 0.5rem;
+   padding-bottom: 0.5rem;
+}

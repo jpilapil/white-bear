@@ -11407,4 +11407,12 @@ h1 {
   padding: 16px;
 }
 
+.landing-button {
+  margin-top: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
 /*# sourceMappingURL=dist.css.map */
