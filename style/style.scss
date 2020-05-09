@@ -15,9 +15,11 @@ h1 {
 // BUTTONS
 
 .btn-link {
+   font-weight: $font-weight-bold;
+   color: $gray-500;
    padding-left: 0;
    padding-right: 0;
-   font-weight: $font-weight-bold;
+   border: 0;
 }
 
 // TABS
@@ -58,9 +60,9 @@ h1 {
    color: $success;
 }
 
-.input-outline {
-   border: 2px solid $gray;
-}
+// .input-outline {
+//    border: 2px solid $gray;
+// }
 
 // BACKGROUND IMAGE
 .background-image {
