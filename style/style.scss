@@ -75,3 +75,8 @@ h1 {
    float: right;
    background-color: $blue-600;
 }
+
+// fixes card padding issue on login page
+#inside-card {
+   padding: 16px;
+}
