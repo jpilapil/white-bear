@@ -22,6 +22,10 @@ h1 {
    border: 0;
 }
 
+.btn-group .btn {
+   font-weight: $font-weight-normal;
+}
+
 .navigation-button {
    font-weight: $font-weight-normal;
 }
@@ -64,6 +68,24 @@ h1 {
    color: $success;
 }
 
+textarea {
+   width: 100%;
+   background-color: transparent;
+
+   border: none;
+   overflow: auto;
+   outline: none;
+
+   -webkit-box-shadow: none;
+   -moz-box-shadow: none;
+   box-shadow: none;
+
+   resize: none; /*remove the resize handle on the bottom right*/
+}
+.card textarea {
+   color: $white;
+}
+
 // .input-outline {
 //    border: 2px solid $gray;
 // }
@@ -92,4 +114,10 @@ h1 {
    padding-right: 2rem;
    padding-top: 0.5rem;
    padding-bottom: 0.5rem;
+}
+
+// CUES
+.bg-success,
+.bg-danger p.lead {
+   color: $white;
 }

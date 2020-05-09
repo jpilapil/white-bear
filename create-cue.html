@@ -4,9 +4,38 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="stylesheet" href="/style/dist.css" />
 
-      <title>Review Page</title>
+      <title>Create Que Page</title>
    </head>
    <body>
+      <!-- Success Cue -->
+      <div
+         class="bg-success w-100 py-4 d-none justify-content-center fixed-top"
+         id="overlay-success"
+      >
+         <img
+            src="/icons/success.svg"
+            width="28px"
+            style="margin-bottom: 3px;"
+            class="mr-2"
+         />
+         <p class="lead">Card created!</p>
+      </div>
+
+      <!-- Error Cue -->
+
+      <div
+         class="bg-danger w-100 py-4 d-none justify-content-center fixed-top"
+         id="overlay-error"
+      >
+         <img
+            src="/icons/error.svg"
+            width="28px"
+            style="margin-bottom: 3px;"
+            class="mr-2"
+         />
+         <p class="lead">Oops! Our bad. Please try again.</p>
+      </div>
+
       <div class="container">
          <div class="row mt-1">
             <!-- Header with logo -->
@@ -25,21 +54,21 @@
 
                <!-- Nav bar -->
                <div
-                  class="btn-group d-flex mb-5"
+                  class="btn-group d-flex"
                   role="navigation"
                   aria-label="navigation"
                >
                   <a
                      href="create-answer.html"
                      type="button"
-                     class="btn btn-secondary navigation-button tab-separator"
+                     class="btn btn-secondary navigation-button tab-separator tab-active"
                   >
                      Create new
                   </a>
                   <a
                      href="review-page.html"
                      type="button"
-                     class="btn btn-secondary navigation-button tab-separator tab-active"
+                     class="btn btn-secondary navigation-button tab-separator"
                   >
                      Review
                   </a>
@@ -52,18 +81,17 @@
                   </a>
                </div>
 
+               <h4 class="my-4 text-center text-muted">
+                  Add memorable imagery
+               </h4>
+
                <!-- Card -->
-               <div class="mb-5">
+               <div class="mb-2">
                   <div class="card bg-primary">
                      <div class="card-body">
-                        <p>
-                           A wonderful serenity has taken possession of my
-                           entire soul, like these sweet mornings of spring
-                           which I enjoy with my whole heart. I am alone, and
-                           feel the charm of existence in this spot, which was
-                           created for the bliss of souls like mine. I am so
-                           happy, my dear friend, so absorbed in the exquisit
-                        </p>
+                        <textarea rows="11" class="d-sm-none"></textarea>
+                        <textarea rows="6" class="d-none d-sm-block">
+                        </textarea>
                      </div>
                   </div>
 
@@ -80,20 +108,28 @@
                      </div>
                   </div>
                </div>
-               <button class="btn btn-link">Edit</button>
-               <div class="float-right">
-                  <button class="btn btn-outline-primary mr-4">
-                     Needs Work
-                  </button>
-                  <button class="btn btn-primary">
-                     <img
-                        src="/icons/thumbs-up.svg"
-                        width="20px"
-                        style="margin-bottom: 5px;"
-                        class="mr-2"
-                     />Got it
-                  </button>
-               </div>
+
+               <!-- Character counter -->
+               <p class="float-right mb-5">0/240</p>
+
+               <!-- Clears float -->
+               <div class="clearfix"></div>
+
+               <button id="delete-imagery" class="btn btn-link">
+                  Back to answer
+               </button>
+
+               <button
+                  class="btn btn-lg btn-primary float-right"
+                  id="save-imagery"
+               >
+                  <img
+                     src="/icons/save.svg"
+                     width="20px"
+                     style="margin-bottom: 3px;"
+                     class="mr-2"
+                  />Save
+               </button>
             </div>
          </div>
       </div>

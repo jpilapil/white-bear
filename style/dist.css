@@ -82,7 +82,7 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
 }
 
 abbr[title],
@@ -2132,7 +2132,7 @@ textarea.form-control {
   margin-left: -1.25rem;
 }
 .form-check-input[disabled] ~ .form-check-label, .form-check-input:disabled ~ .form-check-label {
-  color: #6c757d;
+  color: #80818d;
 }
 
 .form-check-label {
@@ -11202,7 +11202,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .text-muted {
-  color: #6c757d !important;
+  color: #80818d !important;
 }
 
 .text-black-50 {
@@ -11356,6 +11356,10 @@ h1 {
   border: 0;
 }
 
+.btn-group .btn {
+  font-weight: 400;
+}
+
 .navigation-button {
   font-weight: 400;
 }
@@ -11396,6 +11400,23 @@ h1 {
   color: #2f52b9;
 }
 
+textarea {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  overflow: auto;
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  resize: none;
+  /*remove the resize handle on the bottom right*/
+}
+
+.card textarea {
+  color: #fff;
+}
+
 .background-image {
   background-image: url(../images/background-landing.jpg);
   background-repeat: no-repeat;
@@ -11417,6 +11438,11 @@ h1 {
   padding-right: 2rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+}
+
+.bg-success,
+.bg-danger p.lead {
+  color: #fff;
 }
 
 /*# sourceMappingURL=dist.css.map */

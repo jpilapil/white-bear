@@ -103,6 +103,11 @@ $h6-font-size: 16px;
 $lead-font-size: 20px;
 $lead-font-weight: 400;
 
+$text-muted: $gray-400;
+
+$lead-font-size: $font-size-base * 1.25;
+$lead-font-weight: $font-weight-normal;
+
 // LINKS
 
 $link-color: theme-color("primary");
@@ -147,38 +152,41 @@ $btn-font-weight: $font-weight-bold;
 
 $btn-padding-y: $input-btn-padding-y;
 $btn-padding-x: $input-btn-padding-x;
-$btn-font-size: $input-btn-font-size;
-$btn-line-height: $input-btn-line-height;
+$btn-font-size: $font-size-base;
+$btn-line-height: $line-height-base;
 
 $btn-padding-y-sm: $input-btn-padding-y-sm;
 $btn-padding-x-sm: $input-btn-padding-x-sm;
-$btn-font-size-sm: $input-btn-font-size-sm;
-$btn-line-height-sm: $input-btn-line-height-sm;
+$btn-font-size-sm: $font-size-base;
+$btn-line-height-sm: $line-height-base;
 
 $btn-padding-y-lg: $input-btn-padding-y-lg;
 $btn-padding-x-lg: $input-btn-padding-x-lg;
-$btn-font-size-lg: $input-btn-font-size-lg;
-$btn-line-height-lg: $input-btn-line-height-lg;
+$btn-font-size-lg: $font-size-base;
+$btn-line-height-lg: $line-height-base;
 
 // INPUTS
 
 $input-padding-y: $input-btn-padding-y;
 $input-padding-x: $input-btn-padding-x;
-$input-font-size: $input-btn-font-size;
-$input-line-height: $input-btn-line-height;
+$input-font-size: $font-size-base;
+$input-line-height: $line-height-base;
 
 $input-padding-y-sm: $input-btn-padding-y-sm;
 $input-padding-x-sm: $input-btn-padding-x-sm;
-$input-font-size-sm: $input-btn-font-size-sm;
-$input-line-height-sm: $input-btn-line-height-sm;
+$input-font-size-sm: $font-size-base;
+$input-line-height-sm: $line-height-base;
 
 $input-padding-y-lg: $input-btn-padding-y-lg;
 $input-padding-x-lg: $input-btn-padding-x-lg;
-$input-font-size-lg: $input-btn-font-size-lg;
-$input-line-height-lg: $input-btn-line-height-lg;
+$input-font-size-lg: $font-size-base;
+$input-line-height-lg: $line-height-base;
 
 // CARDS
 
 $card-border-width: 0;
 $card-spacer-y: map-get($spacers, 4);
 $card-spacer-x: map-get($spacers, 4);
+
+// CUES
+$paragraph-margin-bottom: 0;
