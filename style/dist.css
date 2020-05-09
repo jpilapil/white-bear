@@ -11356,6 +11356,10 @@ h1 {
   border: 0;
 }
 
+.navigation-button {
+  font-weight: 400;
+}
+
 .tab-separator {
   border-left: 1px #292a30 solid;
 }
