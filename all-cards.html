@@ -79,24 +79,12 @@
                      <p class="text-muted">Sort cards by</p>
                   </div>
                   <div class="col-6 mb-4">
-                     <button
-                        class="btn btn-sm btn-outline-secondary dropdown-toggle float-right w-100"
-                        type="button"
-                        data-toggle="dropdown"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                     >
-                        Most recent
-                     </button>
-                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#"
-                           >Something else here</a
-                        >
-                        <div role="separator" class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
-                     </div>
+                     <select class="custom-select" id="inputGroupSelect01">
+                        <option selected>Most recent</option>
+                        <option value="1">Oldest</option>
+                        <option value="2">Hardest</option>
+                        <option value="3">Easiest</option>
+                     </select>
                   </div>
                </div>
 
