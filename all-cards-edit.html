@@ -21,6 +21,19 @@
          <p class="lead">Card saved!</p>
       </div>
 
+      <div
+         class="bg-danger w-100 py-4 d-none justify-content-center fixed-top"
+         id="delete-success"
+      >
+         <img
+            src="/icons/error.svg"
+            width="28px"
+            style="margin-bottom: 3px;"
+            class="mr-2"
+         />
+         <p class="lead">Card deleted</p>
+      </div>
+
       <div class="container">
          <div class="row mt-1">
             <!-- Header with logo -->
@@ -46,7 +59,7 @@
                   <a
                      href="create-answer.html"
                      type="button"
-                     class="btn btn-secondary navigation-button tab-separator tab-active"
+                     class="btn btn-secondary navigation-button tab-separator"
                   >
                      Create new
                   </a>
@@ -60,7 +73,7 @@
                   <a
                      href=""
                      type="button"
-                     class="btn btn-secondary navigation-button tab-separator"
+                     class="btn btn-secondary navigation-button tab-separator tab-active"
                   >
                      All cards
                   </a>
@@ -119,8 +132,8 @@ A wonderful serenity has taken possession of my entire soul, like these sweet mo
                   />Save
                </button>
 
-               <!-- Delete card -->
-
+               <!-- Card properties and delete card -->
+            <div id="card-properties">
                <h4 class="mt-7 text-center text-muted">
                   Card properties
                </h4>
@@ -148,11 +161,12 @@ A wonderful serenity has taken possession of my entire soul, like these sweet mo
                </table>
 
                <div class="custom-control custom-checkbox mb-4">
-                  <input type="checkbox" class="custom-control-input" id="customCheck1">
-                  <label class="custom-control-label" for="customCheck1">Show Delete Button</label>
+                  <input type="checkbox" class="custom-control-input" id="show-delete">
+                  <label class="custom-control-label" for="show-delete">Show Delete Button</label>
                 </div>
 
-                <button type="button" class="btn btn-outline-danger" id="delete-card">Delete this card</button>
+                <button type="button" class="btn btn-outline-danger d-none" id="delete-card">Delete this card</button>
+             </div>
          </div>
       </div>
       <script

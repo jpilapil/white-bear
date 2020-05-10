@@ -21,3 +21,13 @@ $("#save-imagery").click(function () {
 $("#delete-imagery").click(function () {
    $("#overlay-error").toggleClass("d-flex d-none");
 });
+
+// toggle delete button
+$("#show-delete").click(function () {
+   $("#delete-card").toggleClass("d-flex d-none");
+});
+
+// toggle delete success
+$("#delete-card").click(function () {
+   $("#delete-success").toggleClass("d-flex d-none");
+});
