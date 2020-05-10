@@ -1,0 +1,159 @@
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="/style/dist.css" />
+
+      <title>All cards edit</title>
+   </head>
+   <body>
+      <!-- Success Cue -->
+      <div
+         class="bg-success w-100 py-4 d-none justify-content-center fixed-top"
+         id="overlay-success"
+      >
+         <img
+            src="/icons/success.svg"
+            width="28px"
+            style="margin-bottom: 3px;"
+            class="mr-2"
+         />
+         <p class="lead">Card saved!</p>
+      </div>
+
+      <div class="container">
+         <div class="row mt-1">
+            <!-- Header with logo -->
+            <div
+               class="col-12 col-xl-6 offset-xl-3 col-lg-8 offset-lg-2 col-md-10 offset-md-1"
+            >
+               <img
+                  src="/icons/logo-app.svg"
+                  width="32px;"
+                  alt="White Bear Logo"
+               />
+               <h3 class="d-inline text-brand">White Bear</h3>
+               <button class="btn btn-link float-right">
+                  Log out
+               </button>
+
+               <!-- Nav bar -->
+               <div
+                  class="btn-group d-flex"
+                  role="navigation"
+                  aria-label="navigation"
+               >
+                  <a
+                     href="create-answer.html"
+                     type="button"
+                     class="btn btn-secondary navigation-button tab-separator tab-active"
+                  >
+                     Create new
+                  </a>
+                  <a
+                     href="review-page.html"
+                     type="button"
+                     class="btn btn-secondary navigation-button tab-separator"
+                  >
+                     Review
+                  </a>
+                  <a
+                     href=""
+                     type="button"
+                     class="btn btn-secondary navigation-button tab-separator"
+                  >
+                     All cards
+                  </a>
+               </div>
+
+               <h4 class="my-4 text-center text-muted">
+                  Edit card
+               </h4>
+
+               <!-- Card -->
+               <div class="mb-2">
+                  <div class="card bg-primary">
+                     <div class="card-body">
+                        <textarea rows="11" class="d-sm-none">
+A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisit
+                        </textarea>
+                        <textarea rows="6" class="d-none d-sm-block">
+A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisit
+                        </textarea>
+                     </div>
+                  </div>
+
+                  <div class="card bg-secondary">
+                     <div class="card-body">
+                        <p>
+                           A wonderful serenity has taken possession of my
+                           entire soul, like these sweet mornings of spring
+                           which I enjoy with my whole heart. I am alone, and
+                           feel the charm of existence in this spot, which was
+                           created for the bliss of souls like mine. I am so
+                           happy, my dear friend, so absorbed in the exquisit
+                        </p>
+                     </div>
+                  </div>
+               </div>
+
+               <!-- Character counter -->
+               <p class="float-right mb-5">0/240</p>
+
+               <!-- Clears float -->
+               <div class="clearfix"></div>
+
+               <button id="discard-changes" class="btn btn-link">
+                  Discard changes
+               </button>
+
+               <button
+                  class="btn btn-lg btn-primary float-right"
+                  id="save-imagery"
+               >
+                  <img
+                     src="/icons/save.svg"
+                     width="20px"
+                     style="margin-bottom: 3px;"
+                     class="mr-2"
+                  />Save
+               </button>
+
+               <!-- Delete card -->
+
+               <h4 class="mt-7 text-center text-muted">
+                  Card properties
+               </h4>
+
+               <table class="table table-borderless">
+                  <thead></thead>
+                  <tbody>
+                     <tr>
+                        <td class="text-muted">Created on:</td>
+                        <td>May 9, 2020</td>
+                     </tr>
+                     <tr>
+                        <td class="text-muted">Last attempt:</td>
+                        <td>May 9, 2020</td>
+                     </tr>
+                     <tr>
+                        <td class="text-muted">Next attempt:</td>
+                        <td>May 12, 2020</td>
+                     </tr>
+                     <tr>
+                        <td class="text-muted">Consecutives:</td>
+                        <td>4</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+      </div>
+      <script
+         src="https://code.jquery.com/jquery-3.5.1.min.js"
+         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+         crossorigin="anonymous"
+      ></script>
+      <script src="js/main.js"></script>
+   </body>
+</html>
