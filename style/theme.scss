@@ -165,6 +165,13 @@ $btn-padding-x-lg: $input-btn-padding-x-lg;
 $btn-font-size-lg: $font-size-base;
 $btn-line-height-lg: $line-height-base;
 
+$component-active-color: $white;
+$component-active-bg: theme-color("primary");
+$custom-control-indicator-checked-color: $component-active-color;
+$custom-control-indicator-checked-bg: $component-active-bg;
+
+$custom-control-indicator-checked-border-color: $custom-control-indicator-checked-bg;
+
 // INPUTS
 
 $input-padding-y: $input-btn-padding-y;
