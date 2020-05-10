@@ -60,12 +60,19 @@ h1 {
    border-top-right-radius: 0;
 }
 
-.card-text-landing {
+.card-title {
    color: $gray-800;
 }
 
+.card-text-landing {
+   color: $gray-500;
+   font-size: $font-size-base;
+   margin-bottom: 1rem;
+}
 .sign-up-text {
    color: $success;
+   font-size: 1rem;
+   margin-bottom: 1rem;
 }
 
 textarea {
@@ -104,7 +111,8 @@ textarea {
 
 // fixes card padding issue on login page
 #inside-card {
-   padding: 16px;
+   padding: 1rem;
+   margin-top: 5rem;
 }
 
 // fixes button issue on login page
@@ -120,4 +128,14 @@ textarea {
 .bg-success,
 .bg-danger p.lead {
    color: $white;
+}
+
+#landing-brand {
+   padding-top: 5rem;
+   margin-left: 15rem;
+}
+
+.logo-text {
+   padding-left: 2rem;
+   font-family: $font-family-brand;
 }

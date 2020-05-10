@@ -9,33 +9,27 @@
    </head>
    <body class="background-image">
      
-      <div class="container">
-         
-         
-            <div class="row mt-6">
+      <div  class="container-fluid">
+            <div id="landing-brand" class="row">
             <img src="/images/logo-landing.png" class="mr-6" alt="White Bear Landing Logo" />
-            <h1>White Bear</h1>
+            <h1 class="logo-text">White Bear</h1>
             </div>
-      
-
+      </div>
+      <div class="container">
          <div class="row">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-4 mt-6">
-
-               
-
-               
+            
+            <div class="col-4 offset-1 mt-6">
                <!-- first login card -->
-               <div id="inside-card" class="card mt-6" >
+               <div id="inside-card" class="card" >
                   <div id="sign-up-card" class="card-body" >
-                     <h2 class="card-title card-text-landing">Nice to meet you</h2>
+                     <h2 class="card-title ">Nice to meet you</h2>
                      <p class="card-text-landing mb-6">
                         Sign up for White Bear. Free forever.
                      </p>
                      <button id="sign-up-button" type="button" class="btn btn-success btn-lg btn-block btn-lg landing-button">Sign up</button>
                      <!-- second login card -->
                      <div id="sign-up-card2">
-                        <p class="card-text-landing sign-up-text  mb-6">
+                        <p class="card-text-landing sign-up-text">
                            Let's get you signed up.
                         </p>
                               <label class="text-muted" for="exampleInputEmail1">Email address</label>
@@ -55,22 +49,16 @@
                               <a href="/create-answer.html" type="button" class="btn btn-success btn-lg btn-block btn-lg landing-button" >Let's go!</a>
                      </div>
                   </div>
-
-                  
                </div>
-               
-              
-              
-               
-
-               
+            
+               <!-- Card 2 -->
             </div>
-            <div class="col-sm-1"></div>
-            <div class="col-sm-5 mt-6">
+            
+            <div class="col-4 offset-2">
               
                <div id="inside-card" class="card mt-6">
                   <div class="card-body">
-                     <h2 class="card-title card-text-landing">Welcome back</h2>
+                     <h2 class="card-title ">Welcome back</h2>
                      <p class="card-text-landing">
                         Log in with your email address and password.
                      </p>
@@ -81,8 +69,6 @@
                               type="email"
                               class="form-control input-outline"
                               id="exampleInputEmail1"
-                             
-                              
                            />
                         </div>
                         <div class="form-group">
@@ -91,18 +77,15 @@
                               type="password"
                               class="form-control input-outline "
                               id="exampleInputPassword1"
-                              
-                              
                            />
                            
                            <a href="/create-answer.html" type="button" class="btn btn-success bt-lg  float-right landing-button">Log in</a>
-
                      </form>
                   </div>
                </div>
-               
             </div>
          </div>
+      </div>
       </div>
       <script
          src="https://code.jquery.com/jquery-3.5.1.min.js"
