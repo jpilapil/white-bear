@@ -1,11 +1,9 @@
 // disables sign-up-card2 on page load for landing page
-
 $(document).ready(function () {
    $("#sign-up-card2").toggle();
 });
 
 // toggles second sign up
-
 $("#sign-up-button").click(function () {
    $("#sign-up-button").toggle();
    $("#sign-up-card2").toggle();
