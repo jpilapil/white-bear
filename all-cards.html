@@ -53,18 +53,99 @@
                </div>
 
                <!-- Search -->
-               <div class="inputs mb-3">
-                  <input
-                     type="text"
-                     class="form-control"
-                     placeholder="Search for a word"
-                     aria-label="Username"
-                     aria-describedby="basic-addon1"
-                  />
-                  <button>Search</button>
+               <div class="row">
+                  <div class="col-7 mb-4">
+                     <input
+                        type="search"
+                        class="form-control"
+                        placeholder="Search for a word"
+                     />
+                  </div>
+                  <div class="col-5 mb-4">
+                     <button class="btn btn-sm btn-primary float-right">
+                        Search
+                     </button>
+                  </div>
+               </div>
+
+               <!-- Sort -->
+
+               <div class="row">
+                  <div class="col-4 mb-4">
+                     <p class="text-muted">Sort cards by</p>
+                  </div>
+                  <div class="col-8 mb-4">
+                     <div class="dropdown float-right">
+                        <button
+                           class="btn btn-outline-primary dropdown-toggle"
+                           type="button"
+                           id="dropdownMenuButton"
+                           data-toggle="dropdown"
+                           aria-haspopup="true"
+                           aria-expanded="false"
+                        >
+                           Most recent
+                        </button>
+                        <div
+                           class="dropdown-menu"
+                           aria-labelledby="dropdownMenuButton"
+                        >
+                           <a class="dropdown-item" href="#">Oldest</a>
+                           <a class="dropdown-item" href="#">Hardest</a>
+                           <a class="dropdown-item" href="#">Easiest</a>
+                        </div>
+                     </div>
+                  </div>
                </div>
 
                <!-- Card -->
+               <div class="row">
+                  <div class="col-10">
+                     <div class="mb-5">
+                        <div class="card bg-primary">
+                           <div class="card-body">
+                              <p>
+                                 A wonderful serenity has taken possession of my
+                                 entire soul, like these sweet mornings of
+                                 spring which I enjoy with my whole heart. I am
+                                 alone, and feel the charm of existence in this
+                                 spot, which was created for the bliss of souls
+                                 like mine. I am so happy, my dear friend, so
+                                 absorbed in the exquisit
+                              </p>
+                           </div>
+                        </div>
+
+                        <div class="card bg-secondary">
+                           <div class="card-body">
+                              <p>
+                                 A wonderful serenity has taken possession of my
+                                 entire soul, like these sweet mornings of
+                                 spring which I enjoy with my whole heart. I am
+                                 alone, and feel the charm of existence in this
+                                 spot, which was created for the bliss of souls
+                                 like mine. I am so happy, my dear friend, so
+                                 absorbed in the exquisit
+                              </p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+
+                  <!-- Edit button -->
+                  <div class="col-2">
+                     <a href="#" class="btn btn-link">
+                        <img
+                           src="/icons/edit.svg"
+                           alt="Edit Button"
+                           width="24px;"
+                        />
+                        Edit
+                     </a>
+                  </div>
+               </div>
+
+               <!-- Second card -->
                <div class="row">
                   <div class="col-10">
                      <div class="mb-5">

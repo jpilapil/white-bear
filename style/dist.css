@@ -11364,6 +11364,13 @@ h1 {
   font-weight: 400;
 }
 
+#dropdownMenuButton {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
 .tab-separator {
   border-left: 1px #292a30 solid;
 }
