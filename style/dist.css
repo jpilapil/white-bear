@@ -11458,8 +11458,12 @@ textarea {
   padding-top: 5rem;
 }
 
+.bear-logo {
+  padding-left: 5rem;
+}
+
 .logo-text {
-  padding-left: 2rem;
+  padding-left: 1rem;
   font-family: "Fira Sans", "Noto Sans", sans-serif;
 }
 
