@@ -138,3 +138,10 @@ textarea {
    padding-left: 2rem;
    font-family: $font-family-brand;
 }
+
+// fix?
+.custom-select {
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+}
