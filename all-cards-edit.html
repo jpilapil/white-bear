@@ -46,7 +46,11 @@
                   alt="White Bear Logo"
                />
                <h3 class="d-inline text-brand">White Bear</h3>
-               <a href="/index.html" type="button" class="btn btn-link float-right">
+               <a
+                  href="/index.html"
+                  type="button"
+                  class="btn btn-link float-right"
+               >
                   Log out
                </a>
 
@@ -116,12 +120,17 @@ A wonderful serenity has taken possession of my entire soul, like these sweet mo
                <!-- Clears float -->
                <div class="clearfix"></div>
 
-               <a href="/all-cards.html" id="discard-changes" type="button" class="btn btn-link">
+               <a
+                  href="/all-cards.html"
+                  id="discard-changes"
+                  type="button"
+                  class="btn btn-link"
+               >
                   Discard changes
                </a>
 
                <a
-               href="/all-cards.html"
+                  href="/all-cards.html"
                   class="btn btn-lg btn-primary float-right"
                   type="button"
                   id="save-imagery"
@@ -132,43 +141,59 @@ A wonderful serenity has taken possession of my entire soul, like these sweet mo
                      style="margin-bottom: 3px;"
                      class="mr-2"
                   />Save
-            </a>
+               </a>
 
                <!-- Card properties and delete card -->
-            <div id="card-properties">
-               <h4 class="mt-7 text-center text-muted">
-                  Card properties
-               </h4>
-
-               <table class="table table-borderless">
-                  <thead></thead>
-                  <tbody>
-                     <tr>
-                        <td class="text-muted">Created on:</td>
-                        <td>May 9, 2020</td>
-                     </tr>
-                     <tr>
-                        <td class="text-muted">Last attempt:</td>
-                        <td>May 9, 2020</td>
-                     </tr>
-                     <tr>
-                        <td class="text-muted">Next attempt:</td>
-                        <td>May 12, 2020</td>
-                     </tr>
-                     <tr>
-                        <td class="text-muted">Consecutives:</td>
-                        <td>4</td>
-                     </tr>
-                  </tbody>
-               </table>
+               <div id="card-properties">
+                  <h4 class="mt-7 text-center text-muted">
+                     Card properties
+                  </h4>
+                 
+                  <div class="col-9">
+                  <table class="table table-borderless">
+                     <thead></thead>
+                     <tbody>
+                        <tr>
+                           <td class="text-muted">Created on:</td>
+                           <td>May 9, 2020</td>
+                        </tr>
+                        <tr>
+                           <td class="text-muted">Last attempt:</td>
+                           <td>May 9, 2020</td>
+                        </tr>
+                        <tr>
+                           <td class="text-muted">Next attempt:</td>
+                           <td>May 12, 2020</td>
+                        </tr>
+                        <tr>
+                           <td class="text-muted">Consecutives:</td>
+                           <td>4</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
 
                <div class="custom-control custom-checkbox mb-4">
-                  <input type="checkbox" class="custom-control-input" id="show-delete">
-                  <label class="custom-control-label" for="show-delete">Show Delete Button</label>
-                </div>
+                  <input
+                     type="checkbox"
+                     class="custom-control-input"
+                     id="show-delete"
+                  />
+                  <label
+                     class="custom-control-label text-muted"
+                     for="show-delete"
+                     >Show Delete Button</label
+                  >
+               </div>
 
-                <button type="button" class="btn btn-outline-danger d-none" id="delete-card">Delete this card</button>
-             </div>
+               <button
+                  type="button"
+                  class="btn btn-outline-danger d-none"
+                  id="delete-card"
+               >
+                  Delete this card
+               </button>
+            </div>
          </div>
       </div>
       <script
