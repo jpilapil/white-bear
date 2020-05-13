@@ -11427,6 +11427,11 @@ h1 {
   font-size: 1rem;
 }
 
+.password-enter-error1 {
+  color: #a42443;
+  font-size: 1rem;
+}
+
 .password-error2 {
   color: #a42443;
   font-size: 1rem;
