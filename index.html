@@ -41,21 +41,25 @@
                         <p class="card-text-landing sign-up-text">
                            Let's get you signed up.
                         </p>
+                           <div class="form-group">
                               <label class="text-muted" for="exampleInputEmail1">Email address</label>
                               <input
                                  type="email"
                                  class="form-control input-outline border"
                                  id="exampleInputEmail1"
                               />
-                           
-                           
+                           </div>
+                              <p class="email-error1 d-none">Please enter your email address </p>
+                            <div class="form-group">
                               <label class="text-muted" for="exampleInputPassword1">Password</label>
                               <input
                                  type="password"
                                  class="form-control input-outline border"
                                  id="exampleInputPassword1"
                                  />
-                              <a href="/create-answer.html" class="btn btn-success btn-lg btn-block btn-lg landing-button" >Let's go!</a>
+                              </div>
+                              <p class="password-error1 d-none">Your password must be at least 8 characters </p>
+                              <a href="/create-answer.html" id="lets-go" class="btn btn-success btn-lg btn-block btn-lg landing-button" >Let's go!</a>
                      </div>
                   </div>
                </div>
@@ -77,18 +81,20 @@
                            <input
                               type="email"
                               class="form-control input-outline border"
-                              id="exampleInputEmail1"
+                              id="exampleInputEmail2"
                            />
                         </div>
+                        <p class="email-error2 d-none">Please enter your email address </p>
                         <div class="form-group">
                            <label class="text-muted" for="exampleInputPassword1">Password</label>
                            <input
                               type="password"
                               class="form-control input-outline border"
-                              id="exampleInputPassword1"
+                              id="exampleInputPassword2"
                            />
+                           <p class="password-error2 d-none">Your password must be at least 8 characters </p>
                            
-                           <a href="/create-answer.html" class="btn btn-success bt-lg  float-right landing-button">Log in</a>
+                           <a href="/create-answer.html" id="log-in" class="btn btn-success bt-lg  float-right landing-button">Log in</a>
                      </form>
                   </div>
                </div>

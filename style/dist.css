@@ -11408,6 +11408,30 @@ h1 {
   margin-bottom: 1rem;
 }
 
+.email-error1 {
+  color: #a42443;
+  font-size: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.email-error2 {
+  color: #a42443;
+  font-size: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.password-error1 {
+  color: #a42443;
+  font-size: 1rem;
+}
+
+.password-error2 {
+  color: #a42443;
+  font-size: 1rem;
+}
+
 textarea {
   width: 100%;
   background-color: transparent;

@@ -71,8 +71,34 @@ h1 {
 }
 .sign-up-text {
    color: $success;
-   font-size: 1rem;
+   font-size: $font-size-base;
    margin-bottom: 1rem;
+}
+
+// error messages for blank emails
+.email-error1 {
+   color: $danger;
+   font-size: $font-size-base;
+   margin-top: 1rem;
+   margin-bottom: 1rem;
+}
+
+.email-error2 {
+   color: $danger;
+   font-size: $font-size-base;
+   margin-top: 1rem;
+   margin-bottom: 1rem;
+}
+
+// error messages for password
+.password-error1 {
+   color: $danger;
+   font-size: $font-size-base;
+}
+
+.password-error2 {
+   color: $danger;
+   font-size: $font-size-base;
 }
 
 textarea {
