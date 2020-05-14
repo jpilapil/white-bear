@@ -88,3 +88,13 @@ $("#log-in").click(function () {
       $(".password-error2").addClass("d-none");
    }
 });
+
+// textarea character counter
+$("textarea").keyup(function () {
+   var characterCount = $(this).val().length,
+      current = $("#current"),
+      maximum = $("#maximum"),
+      theCount = $("#the-count");
+
+   current.text(characterCount);
+});
