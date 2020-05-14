@@ -98,7 +98,7 @@ $("textarea").keyup(function () {
 
    current.text(characterCount);
 
-   if (characterCount >= 240) {
+   if (characterCount > 240) {
       $("#the-count").addClass("counter-color");
    } else if (characterCount < 240) {
       $("#the-count").removeClass("counter-color");
