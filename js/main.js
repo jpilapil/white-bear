@@ -31,9 +31,9 @@ $("#delete-card").click(function () {
 
 // LANDING PAGE--------------------
 
-// first card
+// FIRST CARD
 
-// email for first card
+// email for first card --
 $("#lets-go").click(function () {
    var checkEmail = $("#inputEmail1").val().length;
    if (checkEmail == 0) {
@@ -45,7 +45,7 @@ $("#lets-go").click(function () {
    }
 });
 
-// password for first card
+// password for first card --
 
 // please enter password if empty
 $("#lets-go").click(function () {
@@ -59,11 +59,29 @@ $("#lets-go").click(function () {
    }
 });
 
-// password must contain 9 or more char
+// password must contain 9 or more char first card
+$("#lets-go").click(function () {
+   var checkPassword = $("#inputPassword1").val().length;
+   if (checkPassword == 0) {
+      $("#inputPassword1").addClass("is-invalid");
+      $(".password-enter-error1").removeClass("d-none");
+   } else {
+      $("#inputPassword1").removeClass("is-invalid");
+      $(".password-enter-error1").addClass("d-none");
+   }
 
-// second card
+   if (checkPassword < 9 && checkPassword !== 0) {
+      $("#inputPassword1").addClass("is-invalid");
+      $(".password-char-error1").removeClass("d-none");
+   } else {
+      $("#inputPassword1").removeClass("is-invalid");
+      $(".password-char-error1").addClass("d-none");
+   }
+});
 
-// email for second card
+// SECOND CARD
+
+// email for second card --
 $("#log-in").click(function () {
    var checkEmail = $("#inputEmail2").val().length;
    if (checkEmail == 0) {
@@ -75,7 +93,8 @@ $("#log-in").click(function () {
    }
 });
 
-// password for second card
+// password for second card --
+// please enter password if empty
 $("#log-in").click(function () {
    var checkPassword = $("#inputPassword2").val().length;
    if (checkPassword == 0) {
@@ -85,7 +104,20 @@ $("#log-in").click(function () {
       $("#inputPassword2").removeClass("is-invalid");
       $(".password-enter-error2").addClass("d-none");
    }
+
+   if (checkPassword < 9 && checkPassword !== 0) {
+      $("#inputPassword2").addClass("is-invalid");
+      $(".password-char-error2").removeClass("d-none");
+   } else {
+      $("#inputPassword2").removeClass("is-invalid");
+      $(".password-char-error2").addClass("d-none");
+   }
 });
+
+// password must contain 9 or more char second card
+// $("#log-in").click(function() {
+
+// })
 
 // // email for first card
 // $("#lets-go").click(function () {

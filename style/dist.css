@@ -11422,7 +11422,7 @@ h1 {
   margin-bottom: 1rem;
 }
 
-.password-error1 {
+.password-char-error1 {
   color: #a42443;
   font-size: 1rem;
 }
@@ -11437,7 +11437,7 @@ h1 {
   font-size: 1rem;
 }
 
-.password-error2 {
+.password-char-error2 {
   color: #a42443;
   font-size: 1rem;
 }
