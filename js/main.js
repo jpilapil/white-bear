@@ -105,6 +105,7 @@ $("#log-in").click(function () {
       $(".password-enter-error2").addClass("d-none");
    }
 
+   // must contain 9 or more char
    if (checkPassword < 9 && checkPassword !== 0) {
       $("#inputPassword2").addClass("is-invalid");
       $(".password-char-error2").removeClass("d-none");
@@ -113,67 +114,6 @@ $("#log-in").click(function () {
       $(".password-char-error2").addClass("d-none");
    }
 });
-
-// password must contain 9 or more char second card
-// $("#log-in").click(function() {
-
-// })
-
-// // email for first card
-// $("#lets-go").click(function () {
-//    var checkEmail = $("#exampleInputEmail1").val().length;
-//    if (checkEmail == 0) {
-//       $(".email-error1").removeClass("d-none");
-//       return false;
-//    } else if (checkEmail != 0) {
-//       $(".email-error1").addClass("d-none");
-//    }
-// });
-// // password for first card
-
-// $("#lets-go").click(function () {
-//    var checkPassword = $("#exampleInputPassword1").val().length;
-//    if (checkPassword === 0) {
-//       $(".password-enter-error1").removeClass("d-none");
-//    } else if (checkPassword != 0) {
-//       $(".password-enter-error1").addClass("d-none");
-//    }
-
-//    if (checkPassword < 9) {
-//       $(".password-error1").removeClass("d-none");
-//    } else if (checkPassword >= 9) {
-//       $(".password-error1").addClass("d-none");
-//    }
-// });
-
-// // second card
-
-// // email for second card
-// $("#log-in").click(function () {
-//    var checkEmail = $("#exampleInputEmail2").val().length;
-//    if (checkEmail == 0) {
-//       $(".email-error2").removeClass("d-none");
-//       return false;
-//    } else if (checkEmail != 0) {
-//       $(".email-error2").addClass("d-none");
-//    }
-// });
-
-// // password for second card
-// $("#log-in").click(function () {
-//    var checkPassword = $("#exampleInputPassword2").val().length;
-//    if (checkPassword === 0) {
-//       $(".password-enter-error2").removeClass("d-none");
-//    } else if (checkPassword != 0) {
-//       $(".password-enter-error2").addClass("d-none");
-//    }
-
-//    if (checkPassword < 9) {
-//       $(".password-error2").removeClass("d-none");
-//    } else if (checkPassword >= 9) {
-//       $(".password-error2").addClass("d-none");
-//    }
-// });
 
 // textarea character counter
 $("textarea").keyup(function () {
