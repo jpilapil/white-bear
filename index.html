@@ -49,7 +49,7 @@
                                  id="inputEmail1"
                               />
                            </div>
-                              <p class="email-error1 d-none">Please enter your email address </p>
+                           <div class="invalid-feedback" id="emailError1">Please enter your email address</div>
                             <div class="form-group">
                               <label class="text-muted" for="inputPassword1">Password</label>
                               <input
@@ -58,9 +58,10 @@
                                  id="inputPassword1"
                                  />
                               </div>
-                              <p class="password-enter-error1 d-none">Please enter your password</p>
-                              <p class="password-char-error1 d-none">Your password must be at least 9 characters </p>
-                              <button href="#" id="lets-go" class="btn btn-success btn-lg btn-block btn-lg landing-button" >Let's go!</button>
+                              <div class="invalid-feedback" id="passwordEnterError1" style="display: none;">Please enter your password</div>
+                              <div class="invalid-feedback" id="passwordLengthError1" style="display: none;">Your password must be at least 9 characters</div>
+                              <div class="invalid-feedback" id="sameLocalError" style="display: none;">Your email address cannot be used in your password</div>
+                              <button href="#" id="letsGo" class="btn btn-success btn-lg btn-block btn-lg landing-button" >Let's go!</button>
                      </div>
                   </div>
                </div>
@@ -85,7 +86,7 @@
                               id="inputEmail2"
                            />
                         </div>
-                        <p class="email-error2 d-none">Please enter your email address </p>
+                        <div class="invalid-feedback" id="emailError2">Please enter your email address</div>
                         <div class="form-group">
                            <label class="text-muted" for="inputPassword2">Password</label>
                            <input
@@ -93,11 +94,10 @@
                               class="form-control input-outline border"
                               id="inputPassword2"
                            />
-
-                           <p class="password-enter-error2 d-none">Please enter your password</p>
-                           <p class="password-char-error2 d-none">Your password must be at least 9 characters </p>
+                           <div class="invalid-feedback" id="passwordEnterError2" style="display: none;">Please enter your password</div>
+                              <div class="invalid-feedback" id="passwordLengthError2" style="display: none;">Your password must be at least 9 characters</div>
                            
-                           <button href="#" id="log-in" class="btn btn-success bt-lg  float-right landing-button">Log in</button>
+                           <button href="#" id="logIn" class="btn btn-success bt-lg  float-right landing-button">Log in</button>
                      
                   </div>
                </div>

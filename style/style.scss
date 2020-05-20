@@ -75,42 +75,6 @@ h1 {
    margin-bottom: 1rem;
 }
 
-// error messages for blank emails
-.email-error1 {
-   color: $danger;
-   font-size: $font-size-base;
-   margin-top: 1rem;
-   margin-bottom: 1rem;
-}
-
-.email-error2 {
-   color: $danger;
-   font-size: $font-size-base;
-   margin-top: 1rem;
-   margin-bottom: 1rem;
-}
-
-// error messages for password
-.password-char-error1 {
-   color: $danger;
-   font-size: $font-size-base;
-}
-
-.password-enter-error1 {
-   color: $danger;
-   font-size: $font-size-base;
-}
-
-.password-enter-error2 {
-   color: $danger;
-   font-size: $font-size-base;
-}
-
-.password-char-error2 {
-   color: $danger;
-   font-size: $font-size-base;
-}
-
 textarea {
    width: 100%;
    background-color: transparent;

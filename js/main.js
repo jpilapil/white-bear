@@ -32,88 +32,174 @@ $("#delete-card").click(function () {
 // LANDING PAGE--------------------
 
 // FIRST CARD
-
-// email for first card --
-$("#lets-go").click(function () {
-   var checkEmail = $("#inputEmail1").val().length;
-   if (checkEmail == 0) {
+//email first card
+$("#letsGo").click(function () {
+   var emailInput = $("#inputEmail1").val();
+   if (emailInput == "") {
+      $("#emailError1").show();
       $("#inputEmail1").addClass("is-invalid");
-      $(".email-error1").removeClass("d-none");
    } else {
       $("#inputEmail1").removeClass("is-invalid");
-      $(".email-error1").addClass("d-none");
+      $("#inputEmail1").addClass("is-valid");
+      $("#emailError1").hide();
    }
 });
 
-// password for first card --
-
-// please enter password if empty
-$("#lets-go").click(function () {
-   var checkPassword = $("#inputPassword1").val().length;
-   if (checkPassword == 0) {
+// password first card
+$("#letsGo").click(function () {
+   var passwordInput = $("#inputPassword1").val();
+   var emailInput = $("#inputEmail1").val();
+   if (passwordInput.length === 0) {
+      $("#passwordEnterError1").show(); // shows warning need pw
+      $("#inputPassword1").addClass("is-invalid"); // shows invalid
+   } else if (passwordInput.length < 9) {
+      $("#passwordLengthError1").show(); // shows that pw needs min of 9 char
+      $("#passwordEnterError1").hide(); // hides input pw warning
       $("#inputPassword1").addClass("is-invalid");
-      $(".password-enter-error1").removeClass("d-none");
+   } else if (passwordInput == emailInput) {
+      $("#sameLocalError").show(); // shows cannot be same as email
+      $("#passwordLengthError1").hide(); // hides the pw <=9 warning
+      $("#passwordEnterError1").hide();
+      $("#inputPassword1").addClass("is-invalid");
    } else {
       $("#inputPassword1").removeClass("is-invalid");
-      $(".password-enter-error1").addClass("d-none");
-   }
-});
-
-// password must contain 9 or more char first card
-$("#lets-go").click(function () {
-   var checkPassword = $("#inputPassword1").val().length;
-   if (checkPassword == 0) {
-      $("#inputPassword1").addClass("is-invalid");
-      $(".password-enter-error1").removeClass("d-none");
-   } else {
-      $("#inputPassword1").removeClass("is-invalid");
-      $(".password-enter-error1").addClass("d-none");
-   }
-
-   if (checkPassword < 9 && checkPassword !== 0) {
-      $("#inputPassword1").addClass("is-invalid");
-      $(".password-char-error1").removeClass("d-none");
-   } else {
-      $("#inputPassword1").removeClass("is-invalid");
-      $(".password-char-error1").addClass("d-none");
+      $("#sameLocalError").removeClass("is-invalid");
+      $("#inputPassword1").addClass("is-valid");
+      $("#passwordLengthError1, #passwordEnterError1").hide();
    }
 });
 
 // SECOND CARD
-
-// email for second card --
-$("#log-in").click(function () {
-   var checkEmail = $("#inputEmail2").val().length;
-   if (checkEmail == 0) {
+//email second card
+$("#logIn").click(function () {
+   var emailInput = $("#inputEmail2").val();
+   if (emailInput == "") {
+      $("#emailError2").show();
       $("#inputEmail2").addClass("is-invalid");
-      $(".email-error2").removeClass("d-none");
    } else {
       $("#inputEmail2").removeClass("is-invalid");
-      $(".email-error2").addClass("d-none");
+      $("#inputEmail2").addClass("is-valid");
+      $("#emailError2").hide();
    }
 });
 
-// password for second card --
-// please enter password if empty
-$("#log-in").click(function () {
-   var checkPassword = $("#inputPassword2").val().length;
-   if (checkPassword == 0) {
+// password second card
+$("#logIn").click(function () {
+   var passwordInput = $("#inputPassword2").val();
+   var emailInput = $("#inputEmail2").val();
+   if (passwordInput.length === 0) {
+      $("#passwordEnterError2").show(); // shows warning need pw
+      $("#inputPassword2").addClass("is-invalid"); // shows invalid
+   } else if (passwordInput.length < 9) {
+      $("#passwordLengthError2").show(); // shows that pw needs min of 9 char
+      $("#passwordEnterError2").hide(); // hides input pw warning
       $("#inputPassword2").addClass("is-invalid");
-      $(".password-enter-error2").removeClass("d-none");
+   } else if (passwordInput == emailInput) {
+      $("#sameLocalError").show(); // shows cannot be same as email
+      $("#passwordLengthError2").hide(); // hides the pw <=9 warning
+      $("#passwordEnterError2").hide();
+      $("#inputPassword2").addClass("is-invalid");
    } else {
       $("#inputPassword2").removeClass("is-invalid");
-      $(".password-enter-error2").addClass("d-none");
-   }
-
-   // must contain 9 or more char
-   if (checkPassword < 9 && checkPassword !== 0) {
-      $("#inputPassword2").addClass("is-invalid");
-      $(".password-char-error2").removeClass("d-none");
-   } else {
-      $("#inputPassword2").removeClass("is-invalid");
-      $(".password-char-error2").addClass("d-none");
+      $("#sameLocalError").removeClass("is-invalid");
+      $("#inputPassword2").addClass("is-valid");
+      $("#passwordLengthError2, #passwordEnterError2").hide();
    }
 });
+
+// FIRST CARD
+
+// // email for first card --
+// $("#lets-go").click(function () {
+//    var checkEmail = $("#inputEmail1").val().length;
+//    if (checkEmail == 0) {
+//       $("#inputEmail1").addClass("is-invalid");
+//       $(".email-error1").removeClass("d-none");
+//    } else {
+//       $("#inputEmail1").removeClass("is-invalid");
+//       $(".email-error1").addClass("d-none");
+//    }
+// });
+
+// // password for first card --
+
+// // please enter password if empty
+// $("#lets-go").click(function () {
+//    var checkPassword = $("#inputPassword1").val().length;
+//    if (checkPassword == 0) {
+//       $("#inputPassword1").addClass("is-invalid");
+//       $(".password-enter-error1").removeClass("d-none");
+//    } else {
+//       $("#inputPassword1").removeClass("is-invalid");
+//       $(".password-enter-error1").addClass("d-none");
+//    }
+// });
+
+// // password must contain 9 or more char first card
+// $("#lets-go").click(function () {
+//    var checkPassword = $("#inputPassword1").val().length;
+//    if (checkPassword == 0) {
+//       $("#inputPassword1").addClass("is-invalid");
+//       $(".password-enter-error1").removeClass("d-none"); // please enter your password
+//    } else {
+//       $("#inputPassword1").removeClass("is-invalid");
+//       $(".password-enter-error1").addClass("d-none");
+//    }
+
+//    if (checkPassword < 9 && checkPassword !== 0) {
+//       $("#inputPassword1").addClass("is-invalid");
+//       $(".password-char-error1").removeClass("d-none"); // password must be at least 9 char
+//    } else {
+//       $("#inputPassword1").removeClass("is-invalid");
+//       $(".password-char-error1").addClass("d-none");
+//    }
+//    // password cannot be same as email
+//    var passwordSame = $("inputPassword1").val();
+//    var emailSame = $("inputEmail1").val();
+//    if (emailSame == passwordSame) {
+//       $("#inputPassword1").addClass("is-invalid");
+//       $(".check-email-password").removeClass("d-none"); // email cannot be used in password
+//    } else {
+//       $("#inputPassword1").removeClass("is-invalid");
+//       $(".check-email-password").addClass("d-none");
+//    }
+// });
+
+// // SECOND CARD
+
+// // email for second card --
+// $("#log-in").click(function () {
+//    var checkEmail = $("#inputEmail2").val().length;
+//    if (checkEmail == 0) {
+//       $("#inputEmail2").addClass("is-invalid");
+//       $(".email-error2").removeClass("d-none");
+//    } else {
+//       $("#inputEmail2").removeClass("is-invalid");
+//       $(".email-error2").addClass("d-none");
+//    }
+// });
+
+// // password for second card --
+// // please enter password if empty
+// $("#log-in").click(function () {
+//    var checkPassword = $("#inputPassword2").val().length;
+//    if (checkPassword == 0) {
+//       $("#inputPassword2").addClass("is-invalid");
+//       $(".password-enter-error2").removeClass("d-none");
+//    } else {
+//       $("#inputPassword2").removeClass("is-invalid");
+//       $(".password-enter-error2").addClass("d-none");
+//    }
+
+//    // must contain 9 or more char
+//    if (checkPassword < 9 && checkPassword !== 0) {
+//       $("#inputPassword2").addClass("is-invalid");
+//       $(".password-char-error2").removeClass("d-none");
+//    } else {
+//       $("#inputPassword2").removeClass("is-invalid");
+//       $(".password-char-error2").addClass("d-none");
+//    }
+// });
 
 // textarea character counter
 $("textarea").keyup(function () {
