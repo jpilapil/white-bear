@@ -32,8 +32,12 @@ $("#delete-card").click(function () {
 // LANDING PAGE--------------------
 
 // FIRST CARD
-//email first card
+
 $("#letsGo").click(function () {
+   var isValidEmail = false;
+   var isValidPassword = false;
+
+   //email first card
    var emailInput = $("#inputEmail1").val();
    if (emailInput == "") {
       $("#emailError1").show();
@@ -42,11 +46,10 @@ $("#letsGo").click(function () {
       $("#inputEmail1").removeClass("is-invalid");
       $("#inputEmail1").addClass("is-valid");
       $("#emailError1").hide();
+      isValidEmail = true;
    }
-});
 
-// password first card
-$("#letsGo").click(function () {
+   // password first card
    var passwordInput = $("#inputPassword1").val();
    var emailInput = $("#inputEmail1").val();
    if (passwordInput.length === 0) {
@@ -66,26 +69,55 @@ $("#letsGo").click(function () {
       $("#sameLocalError").removeClass("is-invalid");
       $("#inputPassword1").addClass("is-valid");
       $("#passwordLengthError1, #passwordEnterError1").hide();
+      isValidPassword = true;
    }
 
-   // WORK ON THIS ---------------------------------------------------------------------------------------------
+   // USER OBJECT
    var user = {
       _id: 678123,
       email: emailInput,
       password: passwordInput,
-      createdOn: 2006192221700,
+      createdOn: newCreate,
    };
 
-   // function randomNumber(min, max) {
-   //    var randomVal = min + Math.random() * (max - min);
-   //    return Math.round(randomVal);
-   // }
-
-   for (var _id in user) {
+   // if all requirements in email and password inputs are correct, log the user object to the console.
+   if (isValidEmail === true && isValidPassword === true) {
+      console.log(user);
    }
 
-   console.log(user._id);
-   // console.log(randomNumber(000, 999));
+   // creates padding for the dates and adds a 0 if they are one digit
+   function addPadding(num) {
+      if (String(num).length < 2) {
+         return "0" + String(num);
+      } else {
+         return num;
+      }
+   }
+
+   // GETS CREATEDON VALUE
+   var todaysDate = new Date(); // generate the current date
+   // takes the current date
+   // gets respective properties from the current date
+   var todaysYear = todaysDate.getYear() - 100;
+   var todaysMonth = todaysDate.getMonth() + 1; // months are 0 index. +1 to show current month
+   var todaysDay = todaysDate.getDate();
+   var todaysHour = todaysDate.getHours();
+   var todaysMin = todaysDate.getMinutes();
+   var todaysSec = todaysDate.getSeconds();
+   var todaysMilli = todaysDate.getMilliseconds();
+   var todaysDateTime = // concatenates all of the properties we need for todays date and time
+      addPadding(todaysYear).toString() +
+      addPadding(todaysMonth).toString() +
+      addPadding(todaysDay).toString() +
+      addPadding(todaysHour).toString() +
+      addPadding(todaysMin).toString() +
+      addPadding(todaysSec).toString();
+
+   var newCreate = (user.createdOn = todaysDateTime); // pushes the string of todaysDateTiome to the user object, createdOn property
+   // console.log(user);
+
+   // _id VALUE
+   var randomNumber = Math.floor(Math.random() * 1000);
 });
 
 // SECOND CARD
@@ -125,100 +157,6 @@ $("#logIn").click(function () {
       $("#passwordLengthError2, #passwordEnterError2").hide();
    }
 });
-
-// FIRST CARD
-
-// // email for first card --
-// $("#lets-go").click(function () {
-//    var checkEmail = $("#inputEmail1").val().length;
-//    if (checkEmail == 0) {
-//       $("#inputEmail1").addClass("is-invalid");
-//       $(".email-error1").removeClass("d-none");
-//    } else {
-//       $("#inputEmail1").removeClass("is-invalid");
-//       $(".email-error1").addClass("d-none");
-//    }
-// });
-
-// // password for first card --
-
-// // please enter password if empty
-// $("#lets-go").click(function () {
-//    var checkPassword = $("#inputPassword1").val().length;
-//    if (checkPassword == 0) {
-//       $("#inputPassword1").addClass("is-invalid");
-//       $(".password-enter-error1").removeClass("d-none");
-//    } else {
-//       $("#inputPassword1").removeClass("is-invalid");
-//       $(".password-enter-error1").addClass("d-none");
-//    }
-// });
-
-// // password must contain 9 or more char first card
-// $("#lets-go").click(function () {
-//    var checkPassword = $("#inputPassword1").val().length;
-//    if (checkPassword == 0) {
-//       $("#inputPassword1").addClass("is-invalid");
-//       $(".password-enter-error1").removeClass("d-none"); // please enter your password
-//    } else {
-//       $("#inputPassword1").removeClass("is-invalid");
-//       $(".password-enter-error1").addClass("d-none");
-//    }
-
-//    if (checkPassword < 9 && checkPassword !== 0) {
-//       $("#inputPassword1").addClass("is-invalid");
-//       $(".password-char-error1").removeClass("d-none"); // password must be at least 9 char
-//    } else {
-//       $("#inputPassword1").removeClass("is-invalid");
-//       $(".password-char-error1").addClass("d-none");
-//    }
-//    // password cannot be same as email
-//    var passwordSame = $("inputPassword1").val();
-//    var emailSame = $("inputEmail1").val();
-//    if (emailSame == passwordSame) {
-//       $("#inputPassword1").addClass("is-invalid");
-//       $(".check-email-password").removeClass("d-none"); // email cannot be used in password
-//    } else {
-//       $("#inputPassword1").removeClass("is-invalid");
-//       $(".check-email-password").addClass("d-none");
-//    }
-// });
-
-// // SECOND CARD
-
-// // email for second card --
-// $("#log-in").click(function () {
-//    var checkEmail = $("#inputEmail2").val().length;
-//    if (checkEmail == 0) {
-//       $("#inputEmail2").addClass("is-invalid");
-//       $(".email-error2").removeClass("d-none");
-//    } else {
-//       $("#inputEmail2").removeClass("is-invalid");
-//       $(".email-error2").addClass("d-none");
-//    }
-// });
-
-// // password for second card --
-// // please enter password if empty
-// $("#log-in").click(function () {
-//    var checkPassword = $("#inputPassword2").val().length;
-//    if (checkPassword == 0) {
-//       $("#inputPassword2").addClass("is-invalid");
-//       $(".password-enter-error2").removeClass("d-none");
-//    } else {
-//       $("#inputPassword2").removeClass("is-invalid");
-//       $(".password-enter-error2").addClass("d-none");
-//    }
-
-//    // must contain 9 or more char
-//    if (checkPassword < 9 && checkPassword !== 0) {
-//       $("#inputPassword2").addClass("is-invalid");
-//       $(".password-char-error2").removeClass("d-none");
-//    } else {
-//       $("#inputPassword2").removeClass("is-invalid");
-//       $(".password-char-error2").addClass("d-none");
-//    }
-// });
 
 // textarea character counter
 $("textarea").keyup(function () {
