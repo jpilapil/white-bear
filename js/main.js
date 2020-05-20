@@ -50,15 +50,15 @@ $("#letsGo").click(function () {
    var passwordInput = $("#inputPassword1").val();
    var emailInput = $("#inputEmail1").val();
    if (passwordInput.length === 0) {
-      $("#passwordEnterError1").show(); // shows warning need pw
-      $("#inputPassword1").addClass("is-invalid"); // shows invalid
+      $("#passwordEnterError1").show(); // please enter password
+      $("#inputPassword1").addClass("is-invalid");
    } else if (passwordInput.length < 9) {
-      $("#passwordLengthError1").show(); // shows that pw needs min of 9 char
+      $("#passwordLengthError1").show(); // password must be 9 char
       $("#passwordEnterError1").hide(); // hides input pw warning
       $("#inputPassword1").addClass("is-invalid");
    } else if (passwordInput == emailInput) {
-      $("#sameLocalError").show(); // shows cannot be same as email
-      $("#passwordLengthError1").hide(); // hides the pw <=9 warning
+      $("#sameLocalError").show(); // email cannot be same as email
+      $("#passwordLengthError1").hide();
       $("#passwordEnterError1").hide();
       $("#inputPassword1").addClass("is-invalid");
    } else {
@@ -67,6 +67,25 @@ $("#letsGo").click(function () {
       $("#inputPassword1").addClass("is-valid");
       $("#passwordLengthError1, #passwordEnterError1").hide();
    }
+
+   // WORK ON THIS ---------------------------------------------------------------------------------------------
+   var user = {
+      _id: 678123,
+      email: emailInput,
+      password: passwordInput,
+      createdOn: 2006192221700,
+   };
+
+   // function randomNumber(min, max) {
+   //    var randomVal = min + Math.random() * (max - min);
+   //    return Math.round(randomVal);
+   // }
+
+   for (var _id in user) {
+   }
+
+   console.log(user._id);
+   // console.log(randomNumber(000, 999));
 });
 
 // SECOND CARD
@@ -88,15 +107,15 @@ $("#logIn").click(function () {
    var passwordInput = $("#inputPassword2").val();
    var emailInput = $("#inputEmail2").val();
    if (passwordInput.length === 0) {
-      $("#passwordEnterError2").show(); // shows warning need pw
-      $("#inputPassword2").addClass("is-invalid"); // shows invalid
+      $("#passwordEnterError2").show(); // please enter password
+      $("#inputPassword2").addClass("is-invalid");
    } else if (passwordInput.length < 9) {
-      $("#passwordLengthError2").show(); // shows that pw needs min of 9 char
+      $("#passwordLengthError2").show(); // // password must be 9 char
       $("#passwordEnterError2").hide(); // hides input pw warning
       $("#inputPassword2").addClass("is-invalid");
    } else if (passwordInput == emailInput) {
-      $("#sameLocalError").show(); // shows cannot be same as email
-      $("#passwordLengthError2").hide(); // hides the pw <=9 warning
+      $("#sameLocalError").show(); // email cannot be same as email
+      $("#passwordLengthError2").hide();
       $("#passwordEnterError2").hide();
       $("#inputPassword2").addClass("is-invalid");
    } else {
