@@ -133,8 +133,10 @@ $("#letsGo").click(function () {
 });
 
 // SECOND CARD
-//email second card
+
+// password second card
 $("#logIn").click(function () {
+   //email second card
    var emailInput = $("#inputEmail2").val();
    if (emailInput == "") {
       $("#emailError2").show();
@@ -144,10 +146,8 @@ $("#logIn").click(function () {
       $("#inputEmail2").addClass("is-valid");
       $("#emailError2").hide();
    }
-});
 
-// password second card
-$("#logIn").click(function () {
+   // password second card
    var passwordInput = $("#inputPassword2").val();
    var emailInput = $("#inputEmail2").val();
    if (passwordInput.length === 0) {
