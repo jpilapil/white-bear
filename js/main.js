@@ -82,7 +82,12 @@ $("#letsGo").click(function () {
 
    // if all requirements in email and password inputs are correct, log the user object to the console.
    if (isValidEmail === true && isValidPassword === true) {
-      console.log(user);
+      console.log({
+         _id: userID,
+         email: emailInput,
+         password: passwordInput,
+         createdOn: createdOn,
+      });
    }
 
    // GETS CREATEDON VALUE
@@ -128,8 +133,8 @@ $("#letsGo").click(function () {
       }
    }
    var randomNumber = Math.floor(Math.random() * 1000);
-   var testNumber = "" + idPadding(todaysMilli) + idPadding(randomNumber);
-   user._id = testNumber;
+   var idNumber = "" + idPadding(todaysMilli) + idPadding(randomNumber);
+   user._id = idNumber;
 });
 
 // SECOND CARD
@@ -231,7 +236,7 @@ $("#saveImagery").click(function () {
    lastSave.createdOn = todaysDateTime; // pushes the string of todaysDateTiome to the lastSave object, createdOn property
    lastSave.successfulAttemptsNum = todaysDateTime; // pushes the string of todaysDateTiome to the lastSave object, successfulAttemptsNum property
 
-   // _id VALUE
+   //_id VALUE
 
    function idPadding(num) {
       if (String(num).length == 1) {
@@ -248,3 +253,68 @@ $("#saveImagery").click(function () {
 
    console.log(lastSave);
 });
+
+// ------------------- FUNCTIONS FOR USER ID AND CREATED ON NEEDS WORK!!!! -------------------
+
+// let lastSave = {
+//    _id: userId,
+//    imagery:
+//       "A delicious shishkebab but the first bite of meat after the pointy end is spicy & makes an exclamation point appear over my head like in a JRPG.",
+//    answer:
+//       "The syntax for making a comment in HTML is <!-- Mike's comment here -->",
+//    levelNum: 1,
+//    successfulAttemptsNum: 0,
+//    createdOn: createdOn,
+//    lastAttemptedOn: createdOn, // same as createdOn
+// };
+
+// let todaysDate = new Date(); // generate the current date
+// let todaysMilli = todaysDate.getMilliseconds();
+
+// // creates padding for the dates and adds a 0 if they are one digit
+// function addPadding(num) {
+//    if (String(num).length < 2) {
+//       return "0" + String(num);
+//    } else {
+//       return num;
+//    }
+// }
+
+// function createdOn(todaysDate) {
+//    // var todaysDate = new Date(); // generate the current date
+//    // takes the current date
+//    // gets respective properties from the current date
+//    var todaysYear = todaysDate.getYear() - 100;
+//    var todaysMonth = todaysDate.getMonth() + 1; // months are 0 index. +1 to show current month
+//    var todaysDay = todaysDate.getDate();
+//    var todaysHour = todaysDate.getHours();
+//    var todaysMin = todaysDate.getMinutes();
+//    var todaysSec = todaysDate.getSeconds();
+//    var todaysMilli = todaysDate.getMilliseconds();
+//    var todaysDateTime = // concatenates all of the properties we need for todays date and time
+//       "" + // converts it to a string
+//       addPadding(todaysYear) +
+//       addPadding(todaysMonth) +
+//       addPadding(todaysDay) +
+//       addPadding(todaysHour) +
+//       addPadding(todaysMin) +
+//       addPadding(todaysSec);
+//    lastSave.createdOn = todaysDateTime; // pushes the string of todaysDateTiome to the lastSave object, createdOn property
+//    lastSave.successfulAttemptsNum = todaysDateTime; // pushes the string of todaysDateTiome to the lastSave object, successfulAttemptsNum property
+// }
+
+// function idPadding(num) {
+//    if (String(num).length == 1) {
+//       return "00" + String(num);
+//    } else if (String(num).length == 2) {
+//       return "0" + String(num);
+//    } else {
+//       return num;
+//    }
+// }
+
+// function userId(todaysMilli) {
+//    var randomNumber = Math.floor(Math.random() * 1000);
+//    var idNumber = "" + idPadding(todaysMilli) + idPadding(randomNumber);
+//    lastSave._id = idNumber;
+// }
