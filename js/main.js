@@ -10,7 +10,7 @@ $("#sign-up-button").click(function () {
 });
 
 // toggles card save success when clicked
-$("#save-imagery").click(function () {
+$("#saveImagery").click(function () {
    $("#overlay-success").toggleClass("d-flex d-none");
 });
 
@@ -60,7 +60,7 @@ $("#letsGo").click(function () {
       $("#passwordEnterError1").hide(); // hides input pw warning
       $("#inputPassword1").addClass("is-invalid");
    } else if (passwordInput == emailInput) {
-      $("#sameLocalError").show(); // email cannot be same as email
+      $("#sameLocalError").show(); // email cannot be same as password
       $("#passwordLengthError1").hide();
       $("#passwordEnterError1").hide();
       $("#inputPassword1").addClass("is-invalid");
@@ -74,16 +74,18 @@ $("#letsGo").click(function () {
 
    // USER OBJECT
    var user = {
-      _id: 678123,
+      _id: "",
       email: emailInput,
       password: passwordInput,
-      createdOn: newCreate,
+      createdOn: "",
    };
 
    // if all requirements in email and password inputs are correct, log the user object to the console.
    if (isValidEmail === true && isValidPassword === true) {
       console.log(user);
    }
+
+   // GETS CREATEDON VALUE
 
    // creates padding for the dates and adds a 0 if they are one digit
    function addPadding(num) {
@@ -94,7 +96,6 @@ $("#letsGo").click(function () {
       }
    }
 
-   // GETS CREATEDON VALUE
    var todaysDate = new Date(); // generate the current date
    // takes the current date
    // gets respective properties from the current date
@@ -106,18 +107,31 @@ $("#letsGo").click(function () {
    var todaysSec = todaysDate.getSeconds();
    var todaysMilli = todaysDate.getMilliseconds();
    var todaysDateTime = // concatenates all of the properties we need for todays date and time
-      addPadding(todaysYear).toString() +
-      addPadding(todaysMonth).toString() +
-      addPadding(todaysDay).toString() +
-      addPadding(todaysHour).toString() +
-      addPadding(todaysMin).toString() +
-      addPadding(todaysSec).toString();
-
+      "" + // converts it to a string
+      addPadding(todaysYear) +
+      addPadding(todaysMonth) +
+      addPadding(todaysDay) +
+      addPadding(todaysHour) +
+      addPadding(todaysMin) +
+      addPadding(todaysSec);
+   // ??? do we need the var newCreate ???
    var newCreate = (user.createdOn = todaysDateTime); // pushes the string of todaysDateTiome to the user object, createdOn property
-   // console.log(user);
 
    // _id VALUE
+
+   function idPadding(num) {
+      if (String(num).length == 1) {
+         return "00" + String(num);
+      } else if (String(num).length == 2) {
+         return "0" + String(num);
+      } else {
+         return num;
+      }
+   }
    var randomNumber = Math.floor(Math.random() * 1000);
+   var testNumber = "" + idPadding(todaysMilli) + idPadding(randomNumber);
+   // ??? do we need the var idNumber ???
+   var idNumber = (user._id = testNumber);
 });
 
 // SECOND CARD
@@ -172,4 +186,68 @@ $("textarea").keyup(function () {
    } else if (characterCount < 240) {
       $("#the-count").removeClass("counter-color");
    }
+});
+
+// CREATE IMAGERY PAGE -----------------
+$("#saveImagery").click(function () {
+   var lastSave = {
+      _id: 002045,
+      imagery:
+         "A delicious shishkebab but the first bite of meat after the pointy end is spicy & makes an exclamation point appear over my head like in a JRPG.",
+      answer:
+         "The syntax for making a comment in HTML is <!-- Mike's comment here -->",
+      levelNum: 1,
+      successfulAttemptsNum: 0,
+      createdOn: 200508232659,
+      lastAttemptedOn: 200508232659, // same as createdOn
+   };
+
+   // GETS CREATEDON VALUE
+   // creates padding for the dates and adds a 0 if they are one digit
+   function addPadding(num) {
+      if (String(num).length < 2) {
+         return "0" + String(num);
+      } else {
+         return num;
+      }
+   }
+
+   var todaysDate = new Date(); // generate the current date
+   // takes the current date
+   // gets respective properties from the current date
+   var todaysYear = todaysDate.getYear() - 100;
+   var todaysMonth = todaysDate.getMonth() + 1; // months are 0 index. +1 to show current month
+   var todaysDay = todaysDate.getDate();
+   var todaysHour = todaysDate.getHours();
+   var todaysMin = todaysDate.getMinutes();
+   var todaysSec = todaysDate.getSeconds();
+   var todaysMilli = todaysDate.getMilliseconds();
+   var todaysDateTime = // concatenates all of the properties we need for todays date and time
+      "" + // converts it to a string
+      addPadding(todaysYear) +
+      addPadding(todaysMonth) +
+      addPadding(todaysDay) +
+      addPadding(todaysHour) +
+      addPadding(todaysMin) +
+      addPadding(todaysSec);
+   // ??? do we need the var newCreate ???
+   lastSave.createdOn = todaysDateTime; // pushes the string of todaysDateTiome to the lastSave object, createdOn property
+   lastSave.successfulAttemptsNum = todaysDateTime; // pushes the string of todaysDateTiome to the lastSave object, successfulAttemptsNum property
+   // _id VALUE
+
+   function idPadding(num) {
+      if (String(num).length == 1) {
+         return "00" + String(num);
+      } else if (String(num).length == 2) {
+         return "0" + String(num);
+      } else {
+         return num;
+      }
+   }
+   var randomNumber = Math.floor(Math.random() * 1000);
+   var testNumber = "" + idPadding(todaysMilli) + idPadding(randomNumber);
+   // ??? do we need the var idNumber ???
+   lastSave._id = testNumber;
+
+   console.log(lastSave);
 });
