@@ -114,8 +114,7 @@ $("#letsGo").click(function () {
       addPadding(todaysHour) +
       addPadding(todaysMin) +
       addPadding(todaysSec);
-   // ??? do we need the var newCreate ???
-   var newCreate = (user.createdOn = todaysDateTime); // pushes the string of todaysDateTiome to the user object, createdOn property
+   user.createdOn = todaysDateTime; // pushes the string of todaysDateTiome to the user object, createdOn property
 
    // _id VALUE
 
@@ -130,8 +129,7 @@ $("#letsGo").click(function () {
    }
    var randomNumber = Math.floor(Math.random() * 1000);
    var testNumber = "" + idPadding(todaysMilli) + idPadding(randomNumber);
-   // ??? do we need the var idNumber ???
-   var idNumber = (user._id = testNumber);
+   user._id = testNumber;
 });
 
 // SECOND CARD
@@ -230,9 +228,9 @@ $("#saveImagery").click(function () {
       addPadding(todaysHour) +
       addPadding(todaysMin) +
       addPadding(todaysSec);
-   // ??? do we need the var newCreate ???
    lastSave.createdOn = todaysDateTime; // pushes the string of todaysDateTiome to the lastSave object, createdOn property
    lastSave.successfulAttemptsNum = todaysDateTime; // pushes the string of todaysDateTiome to the lastSave object, successfulAttemptsNum property
+
    // _id VALUE
 
    function idPadding(num) {
@@ -246,7 +244,6 @@ $("#saveImagery").click(function () {
    }
    var randomNumber = Math.floor(Math.random() * 1000);
    var testNumber = "" + idPadding(todaysMilli) + idPadding(randomNumber);
-   // ??? do we need the var idNumber ???
    lastSave._id = testNumber;
 
    console.log(lastSave);
