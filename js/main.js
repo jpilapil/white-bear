@@ -86,7 +86,7 @@ $("#letsGo").click(function () {
       if (String(num).length < 2) {
          return "0" + String(num);
       } else {
-         return num;
+         return String(num);
       }
    }
 
@@ -206,7 +206,7 @@ $("#saveImagery").click(function () {
       if (String(num).length < 2) {
          return "0" + String(num);
       } else {
-         return num;
+         return String(num);
       }
    }
 
@@ -228,8 +228,8 @@ $("#saveImagery").click(function () {
       addPadding(todaysHour) +
       addPadding(todaysMin) +
       addPadding(todaysSec);
-   lastSave.createdOn = todaysDateTime; // pushes the string of todaysDateTiome to the lastSave object, createdOn property
-   lastSave.successfulAttemptsNum = todaysDateTime; // pushes the string of todaysDateTiome to the lastSave object, successfulAttemptsNum property
+   lastSave.createdOn = Number(todaysDateTime); // pushes the string of todaysDateTiome to the lastSave object, createdOn property
+   lastSave.successfulAttemptsNum = Number(todaysDateTime); // pushes the string of todaysDateTiome to the lastSave object, successfulAttemptsNum property
 
    //_id VALUE
 
@@ -239,12 +239,12 @@ $("#saveImagery").click(function () {
       } else if (String(num).length == 2) {
          return "0" + String(num);
       } else {
-         return num;
+         return String(num);
       }
    }
    var randomNumber = Math.floor(Math.random() * 1000);
    var testNumber = "" + idPadding(todaysMilli) + idPadding(randomNumber);
-   lastSave._id = testNumber;
+   lastSave._id = Number(testNumber);
 
    console.log(lastSave);
 });
