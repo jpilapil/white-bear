@@ -51,7 +51,6 @@ $("#letsGo").click(function () {
 
    // password first card
    var passwordInput = $("#inputPassword1").val();
-   var emailInput = $("#inputEmail1").val();
    if (passwordInput.length === 0) {
       $("#passwordEnterError1").show(); // please enter password
       $("#inputPassword1").addClass("is-invalid");
@@ -79,16 +78,6 @@ $("#letsGo").click(function () {
       password: passwordInput,
       createdOn: "",
    };
-
-   // if all requirements in email and password inputs are correct, log the user object to the console.
-   if (isValidEmail === true && isValidPassword === true) {
-      console.log({
-         _id: userID,
-         email: emailInput,
-         password: passwordInput,
-         createdOn: createdOn,
-      });
-   }
 
    // GETS CREATEDON VALUE
 
@@ -119,7 +108,7 @@ $("#letsGo").click(function () {
       addPadding(todaysHour) +
       addPadding(todaysMin) +
       addPadding(todaysSec);
-   user.createdOn = todaysDateTime; // pushes the string of todaysDateTiome to the user object, createdOn property
+   user.createdOn = Number(todaysDateTime); // assigns the string of todaysDateTiome to the user object's createdOn property
 
    // _id VALUE
 
@@ -129,12 +118,18 @@ $("#letsGo").click(function () {
       } else if (String(num).length == 2) {
          return "0" + String(num);
       } else {
-         return num;
+         return String(num);
       }
    }
    var randomNumber = Math.floor(Math.random() * 1000);
-   var idNumber = "" + idPadding(todaysMilli) + idPadding(randomNumber);
-   user._id = idNumber;
+   var idNumber =
+      String(idPadding(todaysMilli)) + String(idPadding(randomNumber));
+   user._id = Number(idNumber); // assigns the string of idNumber to the user object's _id property
+
+   // if all requirements in email and password inputs are correct, log the user object to the console.
+   if (isValidEmail === true && isValidPassword === true) {
+      console.log(user);
+   }
 });
 
 // SECOND CARD
