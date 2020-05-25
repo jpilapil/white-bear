@@ -554,7 +554,7 @@ $("textarea").keyup(function () {
 });
 
 // CREATE IMAGERY PAGE -----------------
-$("#saveImagery").click(function () {
+$("#saveImagery, #nextAnswer").click(function () {
    var lastSave = {
       _id: 002045,
       imagery:
@@ -566,6 +566,8 @@ $("#saveImagery").click(function () {
       createdOn: 200508232659,
       lastAttemptedOn: 200508232659, // same as createdOn
    };
+
+   // let encodedLastSave = encodeURIComponent(lastSave);
 
    // GETS CREATEDON VALUE
    // creates padding for the dates and adds a 0 if they are one digit
@@ -614,6 +616,8 @@ $("#saveImagery").click(function () {
    lastSave._id = Number(testNumber);
 
    console.log(lastSave);
+   // console.log(encodedLastSave);
+   // console.log(`?x=${encodeURIComponent(lastSave)}`);
 });
 
 // ------------------- FUNCTIONS FOR USER ID AND CREATED ON NEEDS WORK!!!! -------------------
