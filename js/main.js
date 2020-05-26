@@ -423,8 +423,8 @@ $("#letsGo").click(function () {
       $("#inputPassword1").addClass("is-invalid");
       // checks if password input is in the list of common passwords
    } else if (commonPasswordsEightChar.includes(passwordInput)) {
-      $("#passwordStrength").show();
-      $("#sameLocalError").hide(); // email cannot be same as password
+      $("#passwordStrength").show(); // password is not strong enough
+      $("#sameLocalError").hide();
       $("#passwordLengthError1").hide();
       $("#passwordEnterError1").hide();
       $("#inputPassword1").addClass("is-invalid");
@@ -501,41 +501,41 @@ $("#letsGo").click(function () {
 
 // SECOND CARD
 
-// password second card
-$("#logIn").click(function () {
-   //email second card
-   var emailInput = $("#inputEmail2").val();
-   if (emailInput == "") {
-      $("#emailError2").show();
-      $("#inputEmail2").addClass("is-invalid");
-   } else {
-      $("#inputEmail2").removeClass("is-invalid");
-      $("#inputEmail2").addClass("is-valid");
-      $("#emailError2").hide();
-   }
+// // password second card
+// $("#logIn").click(function () {
+//    //email second card
+//    var emailInput = $("#inputEmail2").val();
+//    if (emailInput == "") {
+//       $("#emailError2").show();
+//       $("#inputEmail2").addClass("is-invalid");
+//    } else {
+//       $("#inputEmail2").removeClass("is-invalid");
+//       $("#inputEmail2").addClass("is-valid");
+//       $("#emailError2").hide();
+//    }
 
-   // password second card
-   var passwordInput = $("#inputPassword2").val();
-   var emailInput = $("#inputEmail2").val();
-   if (passwordInput.length === 0) {
-      $("#passwordEnterError2").show(); // please enter password
-      $("#inputPassword2").addClass("is-invalid");
-   } else if (passwordInput.length < 9) {
-      $("#passwordLengthError2").show(); // // password must be 9 char
-      $("#passwordEnterError2").hide(); // hides input pw warning
-      $("#inputPassword2").addClass("is-invalid");
-   } else if (passwordInput == emailInput) {
-      $("#sameLocalError").show(); // email cannot be same as email
-      $("#passwordLengthError2").hide();
-      $("#passwordEnterError2").hide();
-      $("#inputPassword2").addClass("is-invalid");
-   } else {
-      $("#inputPassword2").removeClass("is-invalid");
-      $("#sameLocalError").removeClass("is-invalid");
-      $("#inputPassword2").addClass("is-valid");
-      $("#passwordLengthError2, #passwordEnterError2").hide();
-   }
-});
+//    // password second card
+//    var passwordInput = $("#inputPassword2").val();
+//    var emailInput = $("#inputEmail2").val();
+//    if (passwordInput.length === 0) {
+//       $("#passwordEnterError2").show(); // please enter password
+//       $("#inputPassword2").addClass("is-invalid");
+//    } else if (passwordInput.length < 9) {
+//       $("#passwordLengthError2").show(); // // password must be 9 char
+//       $("#passwordEnterError2").hide(); // hides input pw warning
+//       $("#inputPassword2").addClass("is-invalid");
+//    } else if (passwordInput == emailInput) {
+//       $("#sameLocalError").show(); // email cannot be same as email
+//       $("#passwordLengthError2").hide();
+//       $("#passwordEnterError2").hide();
+//       $("#inputPassword2").addClass("is-invalid");
+//    } else {
+//       $("#inputPassword2").removeClass("is-invalid");
+//       $("#sameLocalError").removeClass("is-invalid");
+//       $("#inputPassword2").addClass("is-valid");
+//       $("#passwordLengthError2, #passwordEnterError2").hide();
+//    }
+// });
 
 // textarea character counter
 $("textarea").keyup(function () {
@@ -554,13 +554,15 @@ $("textarea").keyup(function () {
 });
 
 // CREATE IMAGERY PAGE -----------------
-$("#saveImagery, #nextAnswer").click(function () {
+$("#saveImagery").click(function () {
    var lastSave = {
       _id: 002045,
-      imagery:
-         "A delicious shishkebab but the first bite of meat after the pointy end is spicy & makes an exclamation point appear over my head like in a JRPG.",
-      answer:
-         "The syntax for making a comment in HTML is <!-- Mike's comment here -->",
+      imagery: encodeURIComponent(
+         "A delicious shishkebab but the first bite of meat after the pointy end is spicy & makes an exclamation point appear over my head like in a JRPG."
+      ),
+      answer: encodeURIComponent(
+         "The syntax for making a comment in HTML is <!-- Mike's comment here -->"
+      ),
       levelNum: 1,
       successfulAttemptsNum: 0,
       createdOn: 200508232659,
@@ -616,8 +618,6 @@ $("#saveImagery, #nextAnswer").click(function () {
    lastSave._id = Number(testNumber);
 
    console.log(lastSave);
-   // console.log(encodedLastSave);
-   // console.log(`?x=${encodeURIComponent(lastSave)}`);
 });
 
 // ------------------- FUNCTIONS FOR USER ID AND CREATED ON NEEDS WORK!!!! -------------------
