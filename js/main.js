@@ -389,6 +389,27 @@ $("#delete-card").click(function () {
 
 // LANDING PAGE--------------------
 
+// Padding functions for id and milliseconds
+function addPadding(num) {
+   var numAsString = String(num);
+   if (numAsString.length < 2) {
+      return "0" + numAsString;
+   } else {
+      return numAsString;
+   }
+}
+
+function idPadding(num) {
+   var numAsString = String(num);
+   if (numAsString.length === 2) {
+      return "0" + numAsString;
+   } else if (numAsString.length === 1) {
+      return "00" + numAsString;
+   } else {
+      return numAsString;
+   }
+}
+
 // FIRST CARD
 
 $("#letsGo").click(function () {
@@ -449,13 +470,6 @@ $("#letsGo").click(function () {
    // GETS CREATEDON VALUE
 
    // creates padding for the dates and adds a 0 if they are one digit
-   function addPadding(num) {
-      if (String(num).length < 2) {
-         return "0" + String(num);
-      } else {
-         return String(num);
-      }
-   }
 
    var todaysDate = new Date(); // generate the current date
    // takes the current date
@@ -479,19 +493,18 @@ $("#letsGo").click(function () {
 
    // _id VALUE
 
-   function idPadding(num) {
-      if (String(num).length == 1) {
-         return "00" + String(num);
-      } else if (String(num).length == 2) {
-         return "0" + String(num);
-      } else {
-         return String(num);
-      }
-   }
    var randomNumber = Math.floor(Math.random() * 1000);
-   var idNumber =
-      String(idPadding(todaysMilli)) + String(idPadding(randomNumber));
-   user._id = Number(idNumber); // assigns the string of idNumber to the user object's _id property
+   // console.log(todaysMilli);
+   // console.log(idPadding(todaysMilli));
+
+   // console.log(randomNumber);
+   // console.log(idPadding(randomNumber));
+
+   var paddedMilli = idPadding(todaysMilli);
+   var paddedRandom = idPadding(randomNumber);
+
+   var idNumber = paddedMilli + paddedRandom;
+   user._id = idNumber; // assigns the string of idNumber to the user object's _id property
 
    // if all requirements in email and password inputs are correct, log the user object to the console.
    if (isValidEmail === true && isValidPassword === true) {
@@ -569,17 +582,7 @@ $("#saveImagery").click(function () {
       lastAttemptedOn: 200508232659, // same as createdOn
    };
 
-   // let encodedLastSave = encodeURIComponent(lastSave);
-
    // GETS CREATEDON VALUE
-   // creates padding for the dates and adds a 0 if they are one digit
-   function addPadding(num) {
-      if (String(num).length < 2) {
-         return "0" + String(num);
-      } else {
-         return String(num);
-      }
-   }
 
    var todaysDate = new Date(); // generate the current date
    // takes the current date
@@ -603,19 +606,27 @@ $("#saveImagery").click(function () {
    lastSave.successfulAttemptsNum = Number(todaysDateTime); // pushes the string of todaysDateTiome to the lastSave object, successfulAttemptsNum property
 
    //_id VALUE
-
-   function idPadding(num) {
-      if (String(num).length == 1) {
-         return "00" + String(num);
-      } else if (String(num).length == 2) {
-         return "0" + String(num);
-      } else {
-         return String(num);
-      }
-   }
    var randomNumber = Math.floor(Math.random() * 1000);
-   var testNumber = "" + idPadding(todaysMilli) + idPadding(randomNumber);
-   lastSave._id = Number(testNumber);
+   // console.log(todaysMilli);
+   // console.log(idPadding(todaysMilli));
+
+   // console.log(randomNumber);
+   // console.log(idPadding(randomNumber));
+
+   var paddedMilli = idPadding(todaysMilli);
+   var paddedRandom = idPadding(randomNumber);
+
+   var idNumber = paddedMilli + paddedRandom;
+   lastSave._id = idNumber; // assigns the string of idNumber to the user object's _id property
+
+   // var paddedMilli = idPadding(todaysMilli);
+   // var paddedRandom = idPadding(randomNumber);
+
+   // var idNumber = paddedMilli + paddedRandom;
+
+   // var randomNumber = Math.floor(Math.random() * 1000);
+   // var testNumber = "" + idPadding(todaysMilli) + idPadding(randomNumber);
+   // lastSave._id = idNumber;
 
    console.log(lastSave);
 });
