@@ -465,11 +465,40 @@ $("#letsGo").click(function () {
       isValidPassword = true;
    }
 
+   // PASSWORD ENCRYPTION
+
+   // fromCharCode - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode
+   // charCodeAt - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt
+
+   // function to increment characters + 1
+   // 'Z' will wrap back around to 'A', 9 to 0
+   function incrementPasswordChar(passwordInput) {
+      if (passwordInput.includes("z")) {
+         return "a";
+      } else if (passwordInput.includes("Z")) {
+         return "A";
+      } else if (passwordInput.includes(9)) {
+         return 0;
+      }
+      return String.fromCharCode(passwordInput.charCodeAt(0) + 1);
+   }
+
+   // split password input for encryption
+   let splitPassword = passwordInput
+      .split("") // split the password into individual characters (makes it an array as well)
+      .map(function (char) {
+         // map through each characters
+         return incrementPasswordChar(char); // runs each character through nextChar function which increases the value of the given character by 1. (a = b, m = n, etc)
+      })
+      .join(""); // joins the characters back together
+
+   // console.log(splitPassword);
+
    // USER OBJECT
    var user = {
       _id: "",
       email: emailInput,
-      password: passwordInput,
+      password: splitPassword, // encrypted password
       createdOn: "",
    };
 
