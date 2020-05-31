@@ -411,6 +411,32 @@ function idPadding(num) {
    }
 }
 
+var todaysDate = new Date(); // generate the current date
+// takes the current date
+// gets respective properties from the current date
+var todaysYear = todaysDate.getYear() - 100;
+var todaysMonth = todaysDate.getMonth() + 1; // months are 0 index. +1 to show current month
+var todaysDay = todaysDate.getDate();
+var todaysHour = todaysDate.getHours();
+var todaysMin = todaysDate.getMinutes();
+var todaysSec = todaysDate.getSeconds();
+var todaysMilli = todaysDate.getMilliseconds();
+var todaysDateTime = // concatenates all of the properties we need for todays date and time
+   "" + // converts it to a string
+   addPadding(todaysYear) +
+   addPadding(todaysMonth) +
+   addPadding(todaysDay) +
+   addPadding(todaysHour) +
+   addPadding(todaysMin) +
+   addPadding(todaysSec);
+
+var randomNumber = Math.floor(Math.random() * 1000);
+var paddedMilli = idPadding(todaysMilli);
+var paddedRandom = idPadding(randomNumber);
+
+// generate id number
+var idNumber = paddedMilli + paddedRandom;
+
 // FIRST CARD
 
 $("#letsGo").click(function () {
@@ -494,43 +520,10 @@ $("#letsGo").click(function () {
       createdOn: "",
    };
 
-   // GETS CREATEDON VALUE
-
-   var todaysDate = new Date(); // generate the current date
-   // takes the current date
-   // gets respective properties from the current date
-   var todaysYear = todaysDate.getYear() - 100;
-   var todaysMonth = todaysDate.getMonth() + 1; // months are 0 index. +1 to show current month
-   var todaysDay = todaysDate.getDate();
-   var todaysHour = todaysDate.getHours();
-   var todaysMin = todaysDate.getMinutes();
-   var todaysSec = todaysDate.getSeconds();
-   var todaysMilli = todaysDate.getMilliseconds();
-   var todaysDateTime = // concatenates all of the properties we need for todays date and time
-      "" + // converts it to a string
-      addPadding(todaysYear) +
-      addPadding(todaysMonth) +
-      addPadding(todaysDay) +
-      addPadding(todaysHour) +
-      addPadding(todaysMin) +
-      addPadding(todaysSec);
-   user.createdOn = Number(todaysDateTime); // assigns the string of todaysDateTiome to the user object's createdOn property
-
-   // _id VALUE
-
-   var randomNumber = Math.floor(Math.random() * 1000);
-   // console.log(todaysMilli);
-   // console.log(idPadding(todaysMilli));
-
-   // console.log(randomNumber);
-   // console.log(idPadding(randomNumber));
-
-   var paddedMilli = idPadding(todaysMilli);
-   var paddedRandom = idPadding(randomNumber);
-
-   var idNumber = paddedMilli + paddedRandom;
-   user._id = idNumber; // assigns the string of idNumber to the user object's _id property
-
+   // push todaysDateTime as value to user obj, createdOn key
+   user.createdOn = Number(todaysDateTime);
+   // push idNumber as value to user obj, _id key
+   user._id = idNumber;
    // if all requirements in email and password inputs are correct, log the user object to the console.
    if (isValidEmail === true && isValidPassword === true) {
       console.log(user);
@@ -567,37 +560,10 @@ $("#saveImagery").click(function () {
       lastAttemptedOn: 200508232659, // same as createdOn
    };
 
-   // GETS CREATEDON VALUE
-
-   var todaysDate = new Date(); // generate the current date
-   // takes the current date
-   // gets respective properties from the current date
-   var todaysYear = todaysDate.getYear() - 100;
-   var todaysMonth = todaysDate.getMonth() + 1; // months are 0 index. +1 to show current month
-   var todaysDay = todaysDate.getDate();
-   var todaysHour = todaysDate.getHours();
-   var todaysMin = todaysDate.getMinutes();
-   var todaysSec = todaysDate.getSeconds();
-   var todaysMilli = todaysDate.getMilliseconds();
-   var todaysDateTime = // concatenates all of the properties we need for todays date and time
-      "" + // converts it to a string
-      addPadding(todaysYear) +
-      addPadding(todaysMonth) +
-      addPadding(todaysDay) +
-      addPadding(todaysHour) +
-      addPadding(todaysMin) +
-      addPadding(todaysSec);
-   lastSave.createdOn = Number(todaysDateTime); // pushes the string of todaysDateTiome to the lastSave object, createdOn property
-   lastSave.successfulAttemptsNum = Number(todaysDateTime); // pushes the string of todaysDateTiome to the lastSave object, successfulAttemptsNum property
-
-   //_id VALUE
-   var randomNumber = Math.floor(Math.random() * 1000);
-
-   var paddedMilli = idPadding(todaysMilli);
-   var paddedRandom = idPadding(randomNumber);
-
-   var idNumber = paddedMilli + paddedRandom;
-   lastSave._id = idNumber; // assigns the string of idNumber to the user object's _id property
-
+   // push todaysDateTime as value to lastSave obj, createdOn & lastAttemptedoOn key
+   lastSave.createdOn = Number(todaysDateTime);
+   lastSave.lastAttemptedOn = Number(todaysDateTime);
+   // push idNumber as value to lastSave obj, _id key
+   lastSave._id = idNumber;
    console.log(lastSave);
 });
