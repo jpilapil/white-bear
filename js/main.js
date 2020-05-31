@@ -390,6 +390,7 @@ $("#delete-card").click(function () {
 // LANDING PAGE--------------------
 
 // Padding functions for id and milliseconds
+// creates padding for the dates and adds a 0 if they are one digit
 function addPadding(num) {
    var numAsString = String(num);
    if (numAsString.length < 2) {
@@ -461,10 +462,8 @@ $("#letsGo").click(function () {
    }
 
    // PASSWORD ENCRYPTION
-
    // fromCharCode - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode
    // charCodeAt - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt
-
    // function to increment characters + 1
    // 'Z' will wrap back around to 'A', 9 to 0
    function incrementPasswordChar(passwordInput) {
@@ -487,8 +486,6 @@ $("#letsGo").click(function () {
       })
       .join(""); // joins the characters back together
 
-   // console.log(splitPassword);
-
    // USER OBJECT
    var user = {
       _id: "",
@@ -498,8 +495,6 @@ $("#letsGo").click(function () {
    };
 
    // GETS CREATEDON VALUE
-
-   // creates padding for the dates and adds a 0 if they are one digit
 
    var todaysDate = new Date(); // generate the current date
    // takes the current date
@@ -547,16 +542,12 @@ $("#letsGo").click(function () {
 // textarea character counter
 $("textarea").keyup(function () {
    var characterCount = $(this).val().length,
-      current = $("#current"),
-      maximum = $("#maximum"),
-      theCount = $("#the-count");
-
+      current = $("#current");
    current.text(characterCount);
-
-   if (characterCount > 240) {
-      $("#the-count").addClass("counter-color");
+   if (characterCount >= 240) {
+      $("#theCount").addClass("counter-color");
    } else if (characterCount < 240) {
-      $("#the-count").removeClass("counter-color");
+      $("#theCount").removeClass("counter-color");
    }
 });
 
