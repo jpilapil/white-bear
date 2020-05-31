@@ -11476,4 +11476,10 @@ textarea {
   color: #a42443;
 }
 
+.invalidPasswordFeedback,
+.invalidEmailFeedback {
+  color: #a42443;
+  font-size: 1rem;
+}
+
 /*# sourceMappingURL=dist.css.map */

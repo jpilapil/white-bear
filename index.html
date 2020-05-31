@@ -49,8 +49,8 @@
                                  id="inputEmail1"
                               />
                            </div>
-                           <div class="invalid-feedback" id="emailError1">Please enter your email address</div>
-                           <div class="invalid-feedback" id="emailUniqueError">Email must contain at least 3 unique characters</div>
+                           <!-- email error message -->
+                           <div class="invalidEmailFeedback"></div>
                             <div class="form-group">
                               <label class="text-muted" for="inputPassword1">Password</label>
                               <input
@@ -59,10 +59,8 @@
                                  id="inputPassword1"
                                  />
                               </div>
-                              <div class="invalid-feedback" id="passwordEnterError1" style="display: none;">Please enter your password</div>
-                              <div class="invalid-feedback" id="passwordLengthError1" style="display: none;">Your password must be at least 9 characters</div>
-                              <div class="invalid-feedback" id="sameLocalError" style="display: none;">Your email address cannot be used in your password</div>
-                              <div class="invalid-feedback" id="passwordStrength" style="display: none;">Your password is not strong enough</div>
+                              <!-- password error messages -->
+                              <div class="invalidPasswordFeedback"></div>
                               <button href="#" id="letsGo" class="btn btn-success btn-lg btn-block btn-lg landing-button" >Let's go!</button>
                      </div>
                   </div>

@@ -155,3 +155,10 @@ textarea {
 .counter-color {
    color: $danger;
 }
+
+// error messages
+.invalidPasswordFeedback,
+.invalidEmailFeedback {
+   color: $danger;
+   font-size: $font-size-base;
+}

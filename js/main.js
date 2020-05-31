@@ -421,47 +421,43 @@ $("#letsGo").click(function () {
    var emailSplit = emailInput.split("@");
    let uniqueCharEmail = new Set(emailSplit[0]);
    let uniqueCharEmailArr = [...uniqueCharEmail];
+   $("#inputEmail1").addClass("is-invalid"); // adds invalid to input field by default
    if (emailInput == "") {
-      $("#emailError1").show(); // please enter email message
-      $("#inputEmail1").addClass("is-invalid");
+      $(".invalidEmailFeedback").text("Please enter your email address");
    } else if (uniqueCharEmailArr.length < 3) {
-      $("#emailUniqueError").show(); // email must have 3 unique char message
-      $("#inputEmail1").addClass("is-invalid");
+      $(".invalidEmailFeedback").text(
+         "Email must contain at least 3 unique characters"
+      );
    } else {
       $("#inputEmail1").removeClass("is-invalid");
       $("#inputEmail1").addClass("is-valid");
-      $("#emailError1, #emailUniqueError").hide();
+      $(".invalidEmailFeedback").hide();
       isValidEmail = true;
    }
 
    // password first card
    var passwordInput = $("#inputPassword1").val();
+   $("#inputPassword1").addClass("is-invalid"); // adds invalid to input field by default
    if (passwordInput.length === 0) {
-      $("#passwordEnterError1").show(); // please enter password
-      $("#inputPassword1").addClass("is-invalid");
+      $(".invalidPasswordFeedback").text("Please enter your password");
    } else if (passwordInput.length < 9) {
-      $("#passwordLengthError1").show(); // password must be 9 char
-      $("#passwordEnterError1").hide(); // hides input pw warning
-      $("#inputPassword1").addClass("is-invalid");
-   } else if (passwordInput == emailSplit[0]) {
-      $("#sameLocalError").show(); // email cannot be same as password
-      $("#passwordLengthError1").hide();
-      $("#passwordEnterError1").hide();
-      $("#inputPassword1").addClass("is-invalid");
-      // checks if password input is in the list of common passwords
+      $(".invalidPasswordFeedback").text(
+         "Password must be at least 9 characters"
+      );
+   } else if (
+      passwordInput == emailSplit[0] || // before the @
+      passwordInput == emailSplit[1] // after the @
+   ) {
+      $(".invalidPasswordFeedback").text(
+         "Email cannot be the same as password"
+      );
    } else if (commonPasswordsEightChar.includes(passwordInput)) {
-      $("#passwordStrength").show(); // password is not strong enough
-      $("#sameLocalError").hide();
-      $("#passwordLengthError1").hide();
-      $("#passwordEnterError1").hide();
-      $("#inputPassword1").addClass("is-invalid");
+      // checks if password input is in the list of common passwords
+      $(".invalidPasswordFeedback").text("Password is not strong enough");
    } else {
       $("#inputPassword1").removeClass("is-invalid");
-      $("#sameLocalError").removeClass("is-invalid");
       $("#inputPassword1").addClass("is-valid");
-      $(
-         "#passwordLengthError1, #passwordEnterError1, #passwordStrength, #sameLocalError"
-      ).hide();
+      $(".invalidPasswordFeedback").hide();
       isValidPassword = true;
    }
 
@@ -548,42 +544,6 @@ $("#letsGo").click(function () {
 });
 
 // SECOND CARD
-
-// // password second card
-// $("#logIn").click(function () {
-//    //email second card
-//    var emailInput = $("#inputEmail2").val();
-//    if (emailInput == "") {
-//       $("#emailError2").show();
-//       $("#inputEmail2").addClass("is-invalid");
-//    } else {
-//       $("#inputEmail2").removeClass("is-invalid");
-//       $("#inputEmail2").addClass("is-valid");
-//       $("#emailError2").hide();
-//    }
-
-//    // password second card
-//    var passwordInput = $("#inputPassword2").val();
-//    var emailInput = $("#inputEmail2").val();
-//    if (passwordInput.length === 0) {
-//       $("#passwordEnterError2").show(); // please enter password
-//       $("#inputPassword2").addClass("is-invalid");
-//    } else if (passwordInput.length < 9) {
-//       $("#passwordLengthError2").show(); // // password must be 9 char
-//       $("#passwordEnterError2").hide(); // hides input pw warning
-//       $("#inputPassword2").addClass("is-invalid");
-//    } else if (passwordInput == emailInput) {
-//       $("#sameLocalError").show(); // email cannot be same as email
-//       $("#passwordLengthError2").hide();
-//       $("#passwordEnterError2").hide();
-//       $("#inputPassword2").addClass("is-invalid");
-//    } else {
-//       $("#inputPassword2").removeClass("is-invalid");
-//       $("#sameLocalError").removeClass("is-invalid");
-//       $("#inputPassword2").addClass("is-valid");
-//       $("#passwordLengthError2, #passwordEnterError2").hide();
-//    }
-// });
 
 // textarea character counter
 $("textarea").keyup(function () {
