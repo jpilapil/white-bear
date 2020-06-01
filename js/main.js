@@ -446,8 +446,8 @@ $("#letsGo").click(function () {
    //email first card
    var emailInput = $("#inputEmail1").val();
    var emailSplit = emailInput.split("@");
-   let uniqueCharEmail = new Set(emailSplit[0]);
-   let uniqueCharEmailArr = [...uniqueCharEmail];
+   let uniqueCharEmail = new Set(emailSplit[0]); // takes all chars before the @
+   let uniqueCharEmailArr = [...uniqueCharEmail]; // puts into array
    $("#inputEmail1").addClass("is-invalid"); // adds invalid to input field by default
    if (emailInput == "") {
       $(".invalidEmailFeedback").text("Please enter your email address");
