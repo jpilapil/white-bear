@@ -488,19 +488,23 @@ $("#letsGo").click(function () {
    }
 
    // PASSWORD ENCRYPTION
-   // fromCharCode - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode
-   // charCodeAt - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt
+   // fromCharCode - back to string - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode
+   // charCodeAt - return number - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt
    // function to increment characters + 1
    // 'Z' will wrap back around to 'A', 9 to 0
-   function incrementPasswordChar(passwordInput) {
-      if (passwordInput.includes("z")) {
+   function incrementPasswordChar(char) {
+      if (char === "z") {
          return "a";
-      } else if (passwordInput.includes("Z")) {
+      } else if (char === "Z") {
          return "A";
-      } else if (passwordInput.includes(9)) {
+      } else if (char === 9) {
          return 0;
       }
-      return String.fromCharCode(passwordInput.charCodeAt(0) + 1);
+      // return String.fromCharCode(char.charCodeAt(0) + 1);
+      let charCode = char.charCodeAt(); // turns char into number
+      let encryptedCharCode = charCode + 1; // increases number by 1
+      let encryptedCodeString = String.fromCharCode(encryptedCharCode); // returns number back to string
+      return encryptedCodeString;
    }
 
    // split password input for encryption
@@ -511,6 +515,7 @@ $("#letsGo").click(function () {
          return incrementPasswordChar(char); // runs each character through nextChar function which increases the value of the given character by 1. (a = b, m = n, etc)
       })
       .join(""); // joins the characters back together
+   // console.log(passwordInput.split(""));
 
    // USER OBJECT
    var user = {
